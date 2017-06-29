@@ -38,11 +38,7 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <section data-markdown>
-                    <script type="text/template">
-                        # Great user interfaces<br>with React
-                    </script>
-                </section>
+                <section data-markdown="content.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
             </div>
         </div>
 
@@ -65,7 +61,7 @@
                 history: true,
                 center: true,
                 slideNumber: !window.location.search.match(/print-pdf/gi),
-                transition: Reveal.getQueryHash().transition || 'concave',
+                transition: Reveal.getQueryHash().transition || 'slide',
 
                 dependencies: [
                     { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
