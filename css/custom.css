@@ -18,6 +18,11 @@ img {
     list-style-type: none;
 }
 
+.logo {
+    margin-top: 2em!important;
+    max-width: 200px!important;
+}
+
 @media (min-width: 768px) {
     footer {
         display: block;
