@@ -1,0 +1,25 @@
+footer {
+    display: none;
+    position: fixed;
+    left: 1rem;
+    bottom: 0px;
+    z-index: 31;
+    font-size: 12px;
+    line-height: 1;
+}
+
+img {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.no-bullet li {
+    list-style-type: none;
+}
+
+@media (min-width: 768px) {
+    footer {
+        display: block;
+    }
+}
