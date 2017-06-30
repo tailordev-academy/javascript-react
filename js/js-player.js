@@ -23,17 +23,23 @@
             color: '#222',
           },
         })},
-        { name: 'console', value: JSON.stringify({
-          enabled: true,
-          visible: true,
-          maximized: true,
-          collapsible: false
-        })},
       ];
 
       const platform = s.className.replace(/^lang-javascript\.player\.?/, '');
       if (platform === 'transpiler') {
         options.push({ name: 'panes', value: JSON.stringify(['editor', 'transpiler']) });
+      } else if (platform === 'console') {
+        options.push({ name: 'platform', value: 'web' });
+        options.push({ name: 'panes', value: JSON.stringify(['editor', 'player']) });
+        options.push({
+          name: 'console',
+          value: JSON.stringify({
+            enabled: true,
+            visible: true,
+            maximized: true,
+            collapsible: false
+          })
+        });
       } else {
         options.push({ name: 'platform', value: platform !== '' ? platform : 'web' });
         options.push({ name: 'panes', value: JSON.stringify(['editor', 'player']) });
