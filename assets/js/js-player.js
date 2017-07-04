@@ -6,7 +6,9 @@
     .filter(s => /\.player/.test(s.className))
     .forEach(s => {
       const section = s.parentNode.parentNode;
+      const pre = section.querySelector('pre');
       const iframe = document.createElement('iframe');
+
       const options = [
         { name: 'code', value: s.innerHTML.replace(/&lt;/g,"<").replace(/&gt;/g,">") },
         { name: 'title', value: 'JavaScript code' },
@@ -55,7 +57,8 @@
       iframe.frameborder = 0;
       iframe.src = `${url}#${optionsString}`;
 
-      section.append(iframe);
-      section.querySelector('pre').remove();
+
+      section.insertBefore(iframe, pre);
+      pre.remove();
     });
 })(document);

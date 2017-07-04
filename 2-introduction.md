@@ -89,40 +89,119 @@ if (true) {
 
 
 ### ES2015 (ES6)
-#### Fat Arrow Functions
+#### Arrow functions
 
 ``` javascript.player.transpiler
 const foo = () => 'bar'
 
 this.items.map(x => this.doSomethingWith(x))
+
+const odds = evens.map(v => v + 1);
+const pairs = evens.map(
+  v => ({ even: v, odd: v + 1 })
+);
+
+const bar = () => {
+  // do something ...
+  return 'val';
+};
 ```
+
+[MDN Arrow
+functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 
 ### ES2015 (ES6)
 #### Destructuring
 
 ``` javascript.player.transpiler
+// arrays
+const values = ['one', 'two', 'three', 'four'];
+const [one, two, ...others] = values;
+
+// objects
+const props = { a: 'x', b: 'y', c: 'z' };
+const { a, c } = props;
+
+// in functions
+function foo({ x }) {
+  console.log(x);
+}
 ```
+
+[MDN Destructuring
+assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 
 ### ES2015 (ES6)
 #### Imports / Exports
 
+- One default export per file
+- Every other import and export must be named
+
+
+### ES2015 (ES6)
+#### Imports / Exports – Example
+
 ``` javascript.player.transpiler
+// import the default export
+import React from 'react';
+
+// import other named exports
+import { Component, Children } from 'react';
+
+// import default and others simultaneously
+// import React, { Component, Children } from 'react';
 ```
+
+
+### ES2015 (ES6)
+#### Imports / Exports – Example
+
+``` javascript.player.transpiler
+const React = () => {};
+
+// default export
+export default React;
+
+// named export
+export const Component = () => {};
+export const PI = 3.14;
+```
+
+
+### ES2015 (ES6)
+#### Template literals (strings)
+
+``` javascript.player.transpiler
+// multiline strings
+const multiline = `string text line 1
+string text line 2`;
+
+// interpolation <3
+const val = 12;
+const message = `Cost: ${val} euros`;
+
+const alt = `this is ${val || 'undefined'}`;
+```
+
+[MDN Template
+literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
 
 ### ES2015 (ES6)
 #### Default parameters
 
-``` javascript.player.transpiler
-```
+``` javascript.player.console
+const sayHello = (name = 'World') => {
+  console.log(`Hello, ${name}!`);
+};
 
+sayHello();
+sayHello('Jean');
 
-### ES2015 (ES6)
-#### Default parameters
-
-``` javascript.player.web
+// default value is used iif name is `undefined`
+sayHello(null);
 ```
 
 
