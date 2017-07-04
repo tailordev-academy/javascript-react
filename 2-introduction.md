@@ -1,6 +1,5 @@
 # Introduction
 
-----
 
 ## What is React?
 
@@ -11,7 +10,6 @@
 <br>
 Documentation: https://facebook.github.io/react/
 
-----
 
 ## What is Flux?
 
@@ -22,7 +20,6 @@ Documentation: https://facebook.github.io/react/
 <br>
 Documentation: https://facebook.github.io/flux/
 
-----
 
 ## What is Flux?
 
@@ -31,11 +28,9 @@ now the reference and works well with React.
 
 More about it tomorrow!
 
-----
 
 ## Modern JavaScript
 
-----
 
 ### ES5
 
@@ -46,7 +41,6 @@ ES5 is supported by all browsers, but lacks very interesting features. It is the
 JavaScript language you likely know. `jQuery` used to be a great library back
 then.
 
-----
 
 ### ES2015 (ES6)
 
@@ -57,7 +51,6 @@ Most of the modern browsers (_e.g._ Chrome) support it but to maximize
 compatibility, we tend to use a transpiler (_e.g._ [Babel](https://babeljs.io/))
 to convert down to ES5.
 
-----
 
 ### ES2015 (ES6)
 #### Block scoped declarations
@@ -70,7 +63,6 @@ ES2015 introduces two keywords to declare variables:
 Both `const` and `let` are scoped to a block, not to a function like `var`. Do
 not use `var` anymore, tend to use `const` as much as you can.
 
-----
 
 ### ES2015 (ES6)
 #### Block scoped declarations – Example
@@ -90,7 +82,6 @@ if (true) {
 }
 ```
 
-----
 
 ### ES2015 (ES6)
 #### Fat Arrow Functions
@@ -101,7 +92,6 @@ const foo = () => 'bar'
 this.items.map(x => this.doSomethingWith(x))
 ```
 
-----
 
 ### ES2015 (ES6)
 #### Destructuring
@@ -109,7 +99,6 @@ this.items.map(x => this.doSomethingWith(x))
 ``` javascript.player.transpiler
 ```
 
-----
 
 ### ES2015 (ES6)
 #### Imports / Exports
@@ -117,7 +106,6 @@ this.items.map(x => this.doSomethingWith(x))
 ``` javascript.player.transpiler
 ```
 
-----
 
 ### ES2015 (ES6)
 #### Default parameters
@@ -125,7 +113,6 @@ this.items.map(x => this.doSomethingWith(x))
 ``` javascript.player.transpiler
 ```
 
-----
 
 ### ES2015 (ES6)
 #### Default parameters
@@ -133,7 +120,6 @@ this.items.map(x => this.doSomethingWith(x))
 ``` javascript.player.web
 ```
 
-----
 
 ### ES2015 (ES6)
 #### Classes
@@ -141,7 +127,6 @@ this.items.map(x => this.doSomethingWith(x))
 ``` javascript.player.web
 ```
 
-----
 
 ### ES2015 (ES6)
 #### Dynamic object keys
@@ -149,7 +134,6 @@ this.items.map(x => this.doSomethingWith(x))
 ``` javascript.player.web
 ```
 
-----
 
 ### ES2015 (ES6)
 #### Array spread
@@ -157,11 +141,9 @@ this.items.map(x => this.doSomethingWith(x))
 ``` javascript.player.web
 ```
 
-----
 
 ### ESNext
 
-----
 
 ### ESNext
 #### Object Spread
@@ -169,7 +151,6 @@ this.items.map(x => this.doSomethingWith(x))
 ``` javascript.player.web
 ```
 
-----
 
 ### ESNext
 #### Async / Await

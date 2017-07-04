@@ -1,12 +1,5 @@
-# Great user interfaces<br>with React
-
-<img src="images/TailorDev-Academy.png" class="logo">
-
----
-
 # Agenda
 
-----
 
 ## Agenda // Day 1
 
@@ -21,7 +14,6 @@
   - divide and conquer
   - unit testing / snapshots
 
-----
 
 ## Agenda // Day 2
 
@@ -37,7 +29,6 @@
   - third-party components
   - routing
 
-----
 
 ## Agenda // Day 2+
 
