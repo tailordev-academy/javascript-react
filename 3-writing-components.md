@@ -1,5 +1,9 @@
 # Writing components
 
+📌 Learning objectives:
+
+- Learn React
+
 
 ## The JSX syntax
 

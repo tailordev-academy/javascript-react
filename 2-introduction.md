@@ -1,5 +1,10 @@
 # Introduction
 
+📌 Learning objectives:
+
+- learn some definitions
+- understand the (relatively) recent JavaScript syntax
+
 
 ## What is React?
 

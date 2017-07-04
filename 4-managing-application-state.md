@@ -1,5 +1,10 @@
 # Managing application state
 
+📌 Learning objectives:
+
+- Learn Redux
+- Use Redux with React
+
 
 ## What is Redux?
 
