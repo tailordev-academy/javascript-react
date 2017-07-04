@@ -1,6 +1,6 @@
 # Great user interfaces<br>with React
 
-<img src="/images/TailorDev-Academy.png" class="logo">
+<img src="images/TailorDev-Academy.png" class="logo">
 
 ---
 

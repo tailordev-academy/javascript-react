@@ -10,41 +10,40 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-        <link rel="stylesheet" href="css/reveal-base.css">
-        <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/reveal-theme.css" id="theme">
-        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="assets/css/reveal-base.css">
+        <link rel="stylesheet" href="assets/css/reveal.css">
+        <link rel="stylesheet" href="assets/css/reveal-theme.css" id="theme">
+        <link rel="stylesheet" href="assets/css/custom.css">
 
         <!-- Code syntax highlighting -->
-        <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+        <link rel="stylesheet" href="assets/reveal.js/lib/css/zenburn.css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="assets/css/custom.css">
 
         <!-- Printing and PDF exports -->
         <script>
-            var link = document.createElement( 'link' );
+            var link = document.createElement('link');
             link.rel = 'stylesheet';
             link.type = 'text/css';
-            link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
+            link.href = window.location.search.match(/print-pdf/gi) ? 'assets/reveal.js/css/print/pdf.css' : 'assets/reveal.js/css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild( link );
         </script>
 
         <!--[if lt IE 9]>
-        <script src="reveal.js/lib/js/html5shiv.js"></script>
+        <script src="assets/reveal.js/lib/js/html5shiv.js"></script>
         <![endif]-->
     </head>
 
     <body>
         <div class="reveal">
             <div class="slides">
-                <section data-markdown="content/1-agenda.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
-                <section data-markdown="content/2-introduction.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
-                <section data-markdown="content/3-writing-components.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
-                <section data-markdown="content/4-managing-application-state.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
-                <section data-markdown="content/5-consuming-apis.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
-                <section data-markdown="content/6-the-sky-is-the-limit.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
-
+                <section data-markdown="1-agenda.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
+                <section data-markdown="2-introduction.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
+                <section data-markdown="3-writing-components.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
+                <section data-markdown="4-managing-application-state.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
+                <section data-markdown="5-consuming-apis.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
+                <section data-markdown="6-the-sky-is-the-limit.md" data-separator="^---\n" data-separator-vertical="^----\n" data-separator-notes="^Note:"></section>
                 <section data-markdown>
                     <script type="text/template">
                         # The end.
@@ -62,8 +61,8 @@
             </p>
         </footer>
 
-        <script src="reveal.js/lib/js/head.min.js"></script>
-        <script src="reveal.js/js/reveal.js"></script>
+        <script src="assets/reveal.js/lib/js/head.min.js"></script>
+        <script src="assets/reveal.js/js/reveal.js"></script>
 
         <script>
             Reveal.initialize({
@@ -75,11 +74,11 @@
                 transition: Reveal.getQueryHash().transition || 'slide',
 
                 dependencies: [
-                    { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'js/js-player.js' },
+                    { src: 'assets/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'assets/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'assets/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'assets/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'assets/js/js-player.js' },
                 ]
             });
         </script>
