@@ -57,7 +57,6 @@ compatibility, we tend to use a transpiler (_e.g._ [Babel](https://babeljs.io/))
 to convert down to ES5.
 
 
-### ES2015 (ES6)
 #### Block scoped declarations
 
 ES2015 introduces two keywords to declare variables:
@@ -69,7 +68,6 @@ Both `const` and `let` are scoped to a block, not to a function like `var`. Do
 not use `var` anymore, tend to use `const` as much as you can.
 
 
-### ES2015 (ES6)
 #### Block scoped declarations – Example
 
 ``` javascript.player.transpiler
@@ -88,7 +86,6 @@ if (true) {
 ```
 
 
-### ES2015 (ES6)
 #### Arrow functions
 
 ``` javascript.player.transpiler
@@ -111,7 +108,6 @@ const bar = () => {
 functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 
-### ES2015 (ES6)
 #### Destructuring
 
 ``` javascript.player.transpiler
@@ -133,14 +129,12 @@ function foo({ x }) {
 assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 
-### ES2015 (ES6)
 #### Imports / Exports
 
 - One default export per file
 - Every other import and export must be named
 
 
-### ES2015 (ES6)
 #### Imports / Exports – Example
 
 ``` javascript.player.transpiler
@@ -155,7 +149,6 @@ import { Component, Children } from 'react';
 ```
 
 
-### ES2015 (ES6)
 #### Imports / Exports – Example
 
 ``` javascript.player.transpiler
@@ -170,7 +163,6 @@ export const PI = 3.14;
 ```
 
 
-### ES2015 (ES6)
 #### Template literals (strings)
 
 ``` javascript.player.transpiler
@@ -189,7 +181,6 @@ const alt = `this is ${val || 'undefined'}`;
 literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
 
-### ES2015 (ES6)
 #### Default parameters
 
 ``` javascript.player.console
@@ -205,39 +196,230 @@ sayHello(null);
 ```
 
 
-### ES2015 (ES6)
 #### Classes
 
-``` javascript.player.web
+``` javascript.player.console
+class Calculator {
+  constructor(value1, value2) {
+    this.value1 = value1
+    this.value2 = value2
+  }
+
+  static multiply(value1, value2) {
+    return value1 * value2
+  }
+
+  sum() {
+    return this.value1 + this.value2
+  }
+}
+
+const calc = new Calculator(2, 3)
+
+console.log(calc.sum())
+console.log(Calculator.multiply(2, 3))
 ```
 
 
-### ES2015 (ES6)
 #### Dynamic object keys
 
-``` javascript.player.web
+``` javascript.player.console
+const attribute = 'color';
+const style = {
+  [attribute]: 'white',
+};
+
+console.log(style.color);
 ```
 
 
-### ES2015 (ES6)
 #### Array spread
 
-``` javascript.player.web
+``` javascript.player.console
+const foo = ['a', 'b', 'c'];
+const bar = ['d', 'e', 'f'];
+
+console.log(...foo);
+console.log([...foo, ...bar]);
 ```
 
 
 ### ESNext
 
 
-### ESNext
+#### Static class properties
+
+``` javascript.player.console
+class Foo {
+  static bar = 'hello';
+}
+
+console.log(Foo.bar);
+```
+
+
 #### Object Spread
 
-``` javascript.player.web
+``` javascript.player.console
+const defaultStyle = {
+  color: 'black',
+  fontSize: 12,
+  fontWeight: 'normal'
+};
+
+const style = {
+  ...defaultStyle,
+  fontWeight: 'bold',
+  backgroundColor: 'white'
+};
+
+console.log(style);
 ```
 
 
-### ESNext
 #### Async / Await
 
 ``` javascript.player.web
+```
+
+
+## 🚀 Hands-on
+
+Let's start by creating a new project:
+
+```
+$ mkdir -p react/utils
+$ cd !$
+$ git init
+```
+
+
+### Exercise 1
+
+In a `fasta.js` file, write a `generate()` function to randomly generate FASTA
+sequences. This function must be written in ES2015 and exported.
+
+FASTA is a text-based format for representing sequences. A sequence has a name
+in a `header` attribute and the `sequence` itself is compound of letters
+(_nucleotides_):
+
+```
+{
+  header: 'name of the sequence',
+  sequence: 'ATCG...'
+}
+```
+
+
+### Solution 1.1
+
+``` javascript
+// fasta.js
+export const generate = () => {
+  const nucleotides = ['A', 'T', 'C', 'G'];
+  const value = Math.round(Math.random() * 90) + 10;
+  const header = `Sequence ${value}`;
+
+  const s = [];
+  for (let i = 0; i < value; i++) {
+    s.push(nucleotides[Math.floor(Math.random() * nucleotides.length)]);
+  }
+
+  return {
+    header,
+    sequence: s.join(''),
+  };
+};
+```
+
+Does it actually work?
+
+
+## Unit testing
+
+Hello [Jest](https://facebook.github.io/jest/), a powerful JavaScript testing
+framework:
+
+```
+$ npm init # accept all the default settings
+$ npm install jest --save-dev
+```
+
+```
+$ jest
+No tests found
+```
+
+
+### Jest 101
+
+```javascript
+// fasta.test.js
+import { generate } from './fasta';
+
+test('it generates sequences', () => {
+  // TODO: add assertions
+});
+```
+
+<br>
+Documentation: https://facebook.github.io/jest/
+
+
+### Jest + Babel = ❤️
+
+```
+$ jest
+ FAIL  ./fasta.test.js
+  ● Test suite failed to run
+
+    /path/to/react/utils/fasta.test.js:2
+    import { generate } from './fasta';
+    ^^^^^^
+
+    ...
+```
+
+```
+$ npm i --save-dev babel-jest babel-preset-es2015 regenerator-runtime
+$ echo '{ "presets": ["es2015"] }' > .babelrc
+```
+
+
+### It works™
+
+```
+$ jest
+ PASS  ./fasta.test.js
+  ✓ it generates sequences (3ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.701s
+Ran all test suites.
+```
+
+
+## 🚀 Hands-on
+
+
+### Exercise 1.2
+
+1. Install the testing dependencies in your project
+2. Write a unit test for your `generate()` function
+
+
+### Solution 1.2
+
+``` javascript
+// fasta.test.js
+import { generate } from './fasta';
+
+test('it generates sequences', () => {
+  const seq = generate();
+
+  expect(seq.header).toBeDefined();
+  expect(seq.sequence).toBeDefined();
+});
 ```
