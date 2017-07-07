@@ -340,12 +340,12 @@ Does it actually work?
 Hello [Jest](https://facebook.github.io/jest/), a powerful JavaScript testing
 framework:
 
-```
+``` bash
 $ npm init # accept all the default settings
 $ npm install jest --save-dev
 ```
 
-```
+``` bash
 $ jest
 No tests found
 ```
@@ -368,7 +368,7 @@ Documentation: https://facebook.github.io/jest/
 
 ### Jest + Babel = ❤️
 
-```
+``` bash
 $ jest
  FAIL  ./fasta.test.js
   ● Test suite failed to run
@@ -380,7 +380,7 @@ $ jest
     ...
 ```
 
-```
+``` bash
 $ npm i --save-dev babel-jest babel-preset-es2015 regenerator-runtime
 $ echo '{ "presets": ["es2015"] }' > .babelrc
 ```
@@ -388,7 +388,7 @@ $ echo '{ "presets": ["es2015"] }' > .babelrc
 
 ### It works™
 
-```
+``` bash
 $ jest
  PASS  ./fasta.test.js
   ✓ it generates sequences (3ms)
@@ -398,6 +398,18 @@ Tests:       1 passed, 1 total
 Snapshots:   0 total
 Time:        2.701s
 Ran all test suites.
+```
+
+Edit `package.json` to update the `test` script entry:
+
+``` javascript
+"scripts": {
+  "test": "jest"
+}
+```
+
+``` bash
+$ npm test
 ```
 
 
@@ -423,3 +435,103 @@ test('it generates sequences', () => {
   expect(seq.sequence).toBeDefined();
 });
 ```
+
+Can we share it?
+
+
+## Transpilation with Babel
+
+Transpilation means converting JavaScript ES2015 into JavaScript ES5 to maximize
+compatibility.
+
+``` bash
+$ npm i --save-dev babel-cli
+```
+
+``` bash
+$ babel fasta.js --out-dir dist/
+fasta.js -> dist/fasta.js
+```
+
+<br>
+Documentation: https://babeljs.io/
+
+
+### NPM scripts
+
+NPM scripts are custom scripts that can be run _via_ `npm run`. It is similar to
+`Makefile` targets, except that it is bundled in the `package.json` file:
+
+``` javascript
+"scripts": {
+  "test": "jest",
+  "build": "babel fasta.js --out-dir dist/"
+}
+```
+
+``` bash
+$ npm run build
+```
+
+
+### Create a NPM module (1/2)
+
+1. Overriding the main module in `package.json`:
+
+  ``` javascript
+  {
+     "main": "dist/fasta.js",
+     ...
+  }
+  ```
+
+2. Create a `.npmignore` file:
+
+  ``` bash
+  $ echo '*.js' > .npmignore
+  ```
+
+3. Create a `.gitignore` file:
+
+  ``` bash
+  $ echo "node_modules/\ndist/" > .gitignore
+  ```
+
+
+### Create a NPM module (2/2)
+
+4\. Add a hook to automatically build the dist files:
+
+  ``` javascript
+  "scripts": {
+    "build": ...,
+    "prepublish": "npm run build"
+  }
+  ```
+
+That's it! Now we can test it:
+
+``` bash
+$ npm pack
+```
+
+``` bash
+$ tar tf utils-1.0.0.tgz
+package/package.json
+package/.npmignore
+package/.babelrc
+package/dist/fasta.js
+package/utils-1.0.0.tgz
+```
+
+
+### Publish a NPM module
+
+Follow the instructions to set your NPM author info at:
+https://gist.github.com/coolaj86/1318304. Then, publish:
+
+```
+$ npm publish ./
+```
+
+Please, do not do that during the training session.
