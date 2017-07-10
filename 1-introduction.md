@@ -299,12 +299,13 @@ $ git init
 In a `fasta.js` file, write a `generate()` function to randomly generate FASTA
 sequences. This function must be written in ES2015 and exported.
 
-FASTA is a text-based format for representing sequences. A sequence has a name
-in a `header` attribute and the `sequence` itself is compound of letters
-(_nucleotides_):
+FASTA is a text-based format for representing sequences. A sequence has a unique
+identifier (`id`), a name in a `header` attribute and the `sequence` itself is
+compound of letters (_nucleotides_):
 
 ```
 {
+  id: 123456,
   header: 'name of the sequence',
   sequence: 'ATCG...'
 }
@@ -326,6 +327,7 @@ export const generate = () => {
   }
 
   return {
+    id: new Date().getTime(),
     header,
     sequence: s.join(''),
   };
@@ -431,6 +433,7 @@ import { generate } from './fasta';
 test('it generates sequences', () => {
   const seq = generate();
 
+  expect(seq.id).toBeDefined();
   expect(seq.header).toBeDefined();
   expect(seq.sequence).toBeDefined();
 });
