@@ -99,15 +99,13 @@ import ReactDOM from 'react-dom';
 
 - `ReactDOM.render()`: allows to render React components to the DOM, _i.e._
   it converts components into HTML.
-- Provides many HTML-like components, _e.g._, `<div />`, `<span />`, etc.
+- Provides many HTML-like components (DOM tags), _e.g._, `<div />`, `<span />`, etc.
 
 
 ### Class component
 
 ``` javascript
 class Item extends React.Component {
-  // ...
-
   render() {
     return (
       <p>42</p>
@@ -144,6 +142,7 @@ const Item = () => <li>42</li>;
 - Fast, simple to read
 - Should be preferred
 - No lifecycle methods
+- Prefer them!
 
 
 #### Example
@@ -176,6 +175,11 @@ const List = () => (
 
 ReactDOM.render(<List />, document.querySelector('#app'));
 ```
+
+
+### Lists and keys
+
+https://facebook.github.io/react/docs/lists-and-keys.html
 
 
 ### `<App />`
@@ -252,7 +256,7 @@ class App extends Component {
       <div className="App">
         <Header />
 
-        <div className="container">
+        <div className="container-fluid">
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
@@ -264,7 +268,7 @@ class App extends Component {
 ```
 
 
-## Dealing with data<br>(props / state)
+## Dealing with data<br>(props)
 
 
 ### What are props?
@@ -272,11 +276,14 @@ class App extends Component {
 **Props** are **read-only** arbitrary inputs.
 
 All React components must act like pure functions with respect to their props.
+"Pure" functions are called "pure" because they do not attempt to change their
+inputs, and always return the same result for the same inputs.
 
 
 ### Props & class component
 
-In a class-based component, props are accessible with `this.props`:
+In a class-based component, props are accessible _via_ the `this.props`
+attribute:
 
 ``` javascript
 class Item extends React.Component {
@@ -288,6 +295,10 @@ class Item extends React.Component {
     );
   }
 }
+```
+
+``` javascript
+<Item value=42 />
 ```
 
 
@@ -303,20 +314,47 @@ const List = ({ values }) => (
 );
 ```
 
+``` javascript
+<List values={[42, 'foo', 'bar', 123]} />
+```
+
+
+### Typechecking With PropTypes
+
+https://facebook.github.io/react/docs/typechecking-with-proptypes.html
+
 
 ## 🚀 Hands-on
 
 
 ### Exercise 2.2
 
-1. Create a `Item` component
-2. Create a `List` component
+1. Create a `Item` component rendering a `title` prop
+2. Create a `List` component that renders a list of elements (named
+   `sequences`). Each entry is a `Item`:
+
+   ``` javascript
+   const sequences = ['foo', 'bar', 'baz'];
+
+   // <List sequences={sequences} />
+   ```
+
+3. Use Bootstrap **list-group** style
 
 
-## What is state?
+### Solution 2.2
+
+TODO
+
+
+## Dealing with data<br>(state)
+
+
+### What is state?
 
 State allows React components to change their output over time in response to
-user actions, network responses, etc.
+user actions, network responses, etc. State is similar to props, but it is
+private and fully controlled by the component.
 
 
 ## 🚀 Hands-on
@@ -324,19 +362,70 @@ user actions, network responses, etc.
 
 ### Exercise 2.3
 
-1. Create a state in the `App` component
+1. Move the `sequences` list to state in the `App` component
+
+
+### Solution 2.3
+
+TODO
 
 
 ### Exercise 2.4
 
-1. Require the `utils` module made before
-2. Use it to create random sequences
+1. Require the `utils` module created previously
+2. Use this module to populate the `sequences` state attribute with random
+   sequences
+
+
+### Solution 2.4
+
+TODO
 
 
 ## Receiving user's events
 
 
+### Events
+
+https://facebook.github.io/react/docs/handling-events.html
+
+
+### Converting a function to a class
+
+1. Create an ES6 class with the same name that extends `React.Component`
+2. Add a single empty method to it called `render()`
+3. Move the body of the function into the `render()` method
+4. Replace props with this.props in the `render()` body
+5. Delete the remaining empty function declaration
+
+
+## 🚀 Hands-on
+
+
+### Exercise 2.5
+
+1. Add a button below the `List` to add new (random) sequences to it
+2. Allow to select a list item and display its information on the right panel
+   (you have to create this panel too)
+
+
+### Solution 2.5
+
+TODO
+
+
+### Forms
+
+
+### Lifting state up
+
+
 ##  Divide & Conquer
+
+
+### Thinking in React
+
+https://facebook.github.io/react/docs/thinking-in-react.html
 
 
 ## Unit testing / Snapshots
