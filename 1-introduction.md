@@ -135,7 +135,7 @@ assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Op
 - Every other import and export must be named
 
 
-#### Imports / Exports – Example
+#### Imports – Example
 
 ``` javascript.player.transpiler
 // import the default export
@@ -149,7 +149,7 @@ import { Component, Children } from 'react';
 ```
 
 
-#### Imports / Exports – Example
+#### Exports – Example
 
 ``` javascript.player.transpiler
 const React = () => {};
@@ -294,7 +294,7 @@ $ git init
 ```
 
 
-### Exercise 1
+### Exercise 1.1
 
 In a `fasta.js` file, write a `generate()` function to randomly generate FASTA
 sequences. This function must be written in ES2015 and exported.
@@ -535,3 +535,11 @@ $ npm publish ./
 ```
 
 Please, do not do that during the training session.
+
+
+## 🚀 Hands-on
+
+
+### Exercise 1.3
+
+1. Create a NPM module

@@ -7,18 +7,39 @@
 
 ## Create React App
 
-Create React apps with no build configuration.
+Create React apps with no build configuration:
+
+- Start building an app directly
+- No configuration hassle
+- Great default settings
+- Eject mode
 
 ```
 $ npm install -g create-react-app
 ```
 
-```
+
+## 🚀 Hands-on
+
+Let's start by creating a new React project:
+
+``` bash
+$ cd react
 $ create-react-app seqbook
 ```
 
+``` bash
+$ cd seqbook
+$ git init
+$ git add . && git commit -m "Initial commit"
+```
 
-## ~/seqbook
+
+## ~/react/seqbook
+
+> Seqbook is a DNA sequences book. Users will be able to upload FASTA files,
+> manage their sequences (_e.g._, edit metadata), and visualize different
+> metrics.
 
 ```
 .
@@ -33,8 +54,36 @@ $ create-react-app seqbook
 
 ## The JSX syntax
 
+JSX is an extension of the JavaScript syntax. More precisely, it is an alias for
+`React.createElement()`.
 
-## `<App />`
+**It is not HTML**, yet it is tag-based.
+
+
+### Example please
+
+``` javascript.player.transpiler
+const simpleElement = <div />
+
+const complexElement = (
+  <div
+    message="hello"
+    value={anything}
+  >
+    <p>42</p>
+  </div>
+)
+```
+
+
+### `React`
+
+``` javascript
+import React from 'react';
+```
+
+
+### `<App />`
 
 ``` javascript.player.web
 import React, { Component } from 'react';
@@ -58,6 +107,11 @@ class App extends Component {
 
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
+
+
+## 🚀 Hands-on
+
+TODO
 
 
 ## Dealing with data<br>(props / state)
