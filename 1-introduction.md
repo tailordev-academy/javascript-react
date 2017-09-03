@@ -181,6 +181,23 @@ const alt = `this is ${val || 'undefined'}`;
 literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
 
+#### Tagged template literals
+
+Tags allow you to parse template literals with a function. Have a look at the
+[common-tags](https://github.com/declandewet/common-tags) library for examples:
+
+```js
+import { oneLine } from 'common-tags';
+
+oneLine`
+  foo
+  bar
+  baz
+`)
+// "foo bar baz"
+```
+
+
 #### Default parameters
 
 ``` javascript.player.console
@@ -288,7 +305,7 @@ console.log(style);
 Let's start by creating a new project:
 
 ```
-$ mkdir -p react/utils
+$ mkdir -p react/seq-utils
 $ cd !$
 $ git init
 ```
@@ -296,17 +313,16 @@ $ git init
 
 ### Exercise 1.1
 
-In a `fasta.js` file, write a `generate()` function to randomly generate FASTA
+In a `index.js` file, write a `generate()` function to randomly generate DNA
 sequences. This function must be written in ES2015 and exported.
 
-FASTA is a text-based format for representing sequences. A sequence has a unique
-identifier (`id`), a name in a `header` attribute and the `sequence` itself is
+A sequence has a unique identifier (`id`), a `name` and the `sequence` itself,
 compound of letters (_nucleotides_):
 
 ```
 {
   id: 123456,
-  header: 'name of the sequence',
+  name: 'name of the sequence',
   sequence: 'ATCG...'
 }
 ```
@@ -315,20 +331,19 @@ compound of letters (_nucleotides_):
 ### Solution 1.1
 
 ``` javascript
-// fasta.js
+// index.js
 export const generate = () => {
   const nucleotides = ['A', 'T', 'C', 'G'];
-  const value = Math.round(Math.random() * 90) + 10;
-  const header = `Sequence ${value}`;
+  const length = Math.round(Math.random() * 90) + 10;
 
   const s = [];
-  for (let i = 0; i < value; i++) {
+  for (let i = 0; i < length; i++) {
     s.push(nucleotides[Math.floor(Math.random() * nucleotides.length)]);
   }
 
   return {
-    id: new Date().getTime(),
-    header,
+    id: `WD${new Date().getTime()}`,
+    name: `Sequence ${length}`,
     sequence: s.join(''),
   };
 };
@@ -356,8 +371,8 @@ No tests found
 ### Jest 101
 
 ```javascript
-// fasta.test.js
-import { generate } from './fasta';
+// index.test.js
+import { generate } from './index;
 
 test('it generates sequences', () => {
   // TODO: add assertions
@@ -372,11 +387,11 @@ Documentation: https://facebook.github.io/jest/
 
 ``` bash
 $ jest
- FAIL  ./fasta.test.js
+ FAIL  ./index.test.js
   ● Test suite failed to run
 
-    /path/to/react/utils/fasta.test.js:2
-    import { generate } from './fasta';
+    /path/to/react/seq-utils/index.test.js:2
+    import { generate } from './index;
     ^^^^^^
 
     ...
@@ -392,7 +407,7 @@ $ echo '{ "presets": ["es2015"] }' > .babelrc
 
 ``` bash
 $ jest
- PASS  ./fasta.test.js
+ PASS  ./index.test.js
   ✓ it generates sequences (3ms)
 
 Test Suites: 1 passed, 1 total
@@ -427,14 +442,14 @@ $ npm test
 ### Solution 1.2
 
 ``` javascript
-// fasta.test.js
-import { generate } from './fasta';
+// index.test.js
+import { generate } from './index;
 
 test('it generates sequences', () => {
   const seq = generate();
 
   expect(seq.id).toBeDefined();
-  expect(seq.header).toBeDefined();
+  expect(seq.name).toBeDefined();
   expect(seq.sequence).toBeDefined();
 });
 ```
@@ -452,8 +467,8 @@ $ npm i --save-dev babel-cli
 ```
 
 ``` bash
-$ babel fasta.js --out-dir dist/
-fasta.js -> dist/fasta.js
+$ babel index.js --out-dir dist/
+index.js -> dist/index.js
 ```
 
 <br>
@@ -468,7 +483,7 @@ NPM scripts are custom scripts that can be run _via_ `npm run`. It is similar to
 ``` javascript
 "scripts": {
   "test": "jest",
-  "build": "babel fasta.js --out-dir dist/"
+  "build": "babel index.js --out-dir dist/"
 }
 ```
 
@@ -483,7 +498,7 @@ $ npm run build
 
   ``` javascript
   {
-     "main": "dist/fasta.js",
+     "main": "dist/index.js",
      ...
   }
   ```
@@ -523,7 +538,7 @@ $ tar tf utils-1.0.0.tgz
 package/package.json
 package/.npmignore
 package/.babelrc
-package/dist/fasta.js
+package/dist/index.js
 package/utils-1.0.0.tgz
 ```
 
@@ -546,3 +561,46 @@ Please, do not do that during the training session.
 ### Exercise 1.3
 
 1. Create a NPM module
+
+
+## 🚀 Hands-on
+
+
+### Exercise 1.4
+
+In the sequel, we will use [NtSeq](https://github.com/keithwhor/NtSeq), a
+library to manipulate sequences. Let's add a `readSequence()` function that
+returns a `Seq` instance from a sequence string:
+
+```js
+const seq = readSequence('ATCG');
+```
+
+1. Require `ntseq`
+2. Add a new exported function to your module
+3. Add a test case
+
+
+## Code coverage
+
+``` bash
+$ jest --coverage
+```
+
+``` bash
+ PASS  ./index.test.js
+  ✓ it generates sequences (3ms)
+  ✓ it returns a Seq instance from a sequence (2ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.795s, estimated 1s
+Ran all test suites.
+----------|----------|----------|----------|----------|----------------|
+File      |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+----------|----------|----------|----------|----------|----------------|
+All files |      100 |      100 |      100 |      100 |                |
+ index.js |      100 |      100 |      100 |      100 |                |
+----------|----------|----------|----------|----------|----------------|
+```
