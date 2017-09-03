@@ -2,7 +2,10 @@
 
 📌 Learning objectives:
 
-- Learn React
+- Learn how to write React components
+- Learn the difference between state and props
+- Learn how to handle events
+- Learn how to use existing React components
 
 
 ## Create React App
