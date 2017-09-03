@@ -1000,6 +1000,7 @@ Data for the chart can be retrieved by calling `fractionalContentATGC()` on a
 }
 ```
 
+
 ### Checkpoint #5
 
 ![Checkpoint #5](images/seqbook-checkpoint-5.png)
