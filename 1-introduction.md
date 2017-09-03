@@ -342,7 +342,7 @@ export const generate = () => {
   }
 
   return {
-    id: `WD${new Date().getTime()}`,
+    id: `WD${new Date().getTime()}${length}`,
     name: `Sequence ${length}`,
     sequence: s.join(''),
   };
