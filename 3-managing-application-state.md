@@ -19,3 +19,7 @@
 
 
 ## Unit testing
+
+HOC
+
+- https://medium.freecodecamp.org/understanding-higher-order-components-6ce359d761b

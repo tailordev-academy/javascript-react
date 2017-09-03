@@ -211,6 +211,23 @@ Documentation: [Lists and Keys
 ](https://facebook.github.io/react/docs/lists-and-keys.html)
 
 
+## CSS classes
+
+Every React component has a `className` special attribute to add CSS classes to
+it. You cannot use `class`:
+
+```js
+const Component = (props) => (
+  <div className="Component">
+    // ...
+  </div>
+);
+```
+
+It is advised to use the same `className` as the component name but you can do
+whatever you like.
+
+
 ### Example
 
 ``` javascript.player.web
@@ -539,6 +556,9 @@ private and fully controlled by the component.
 
 State can only be used in class-based components.
 
+React provides a `setState()` method to act on the state, never mutate it by
+yourself.
+
 
 ### Example
 
@@ -589,7 +609,413 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ### Events
 
-https://facebook.github.io/react/docs/handling-events.html
+Most components have function props to handle events. Events are camelCased and
+you have to pass functions as event handlers.
+
+When passing functions in JSX callbacks, you have to be careful about the
+meaning of `this`.
+
+<br>
+Documentation: [Handling Events](https://facebook.github.io/react/docs/handling-events.html)
+
+
+### Example
+
+``` javascript.player.web
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { value: 42 };
+    // Uncomment the line below to be able to increment the `value`.
+    //this.handleOnClick = this.handleOnClick.bind(this);
+  }
+
+  handleOnClick() {
+    this.setState(prevState => ({ value: prevState.value + 1 }));
+  }
+
+  render() {
+    return (
+      <div>
+        <p>State value is: {this.state.value}</p>
+        <button onClick={this.handleOnClick}>increment</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.querySelector('#app'));
+```
+
+
+### Alternative/Better syntax
+
+Using [Babel `transform-class-properties`
+plugin](https://babeljs.io/docs/plugins/transform-class-properties/), enabled on
+Create React App:
+
+``` javascript.player.web
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { value: 42 };
+  }
+
+  handleOnClick = () => {
+    this.setState(prevState => ({ value: prevState.value + 1 }));
+  }
+
+  render() {
+    return (
+      <div>
+        <p>State value is: {this.state.value}</p>
+        <button onClick={this.handleOnClick}>increment</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.querySelector('#app'));
+```
+
+
+### Forms
+
+TODO: write me, should talk about controlled/uncontrolled inputs
+
+
+## 🚀 Hands-on
+
+
+### Exercise 2.6
+
+1. Add a button below the `List` to add new (random) sequences to it
+2. Allow to select a list item and display its information on the right panel
+   (you have to create this panel too)
+
+
+### Exercise 2.7
+
+1. Create a `Sequence` component that renders a sequence (`PropTypes.string`):
+
+    ```jinja
+    <pre>
+      <code>{sequence}</code>
+    </pre>
+    ```
+
+2. Add a `styles.css` file for this component with the following content:
+
+    ```css
+    .Sequence {
+      word-break: normal;
+    }
+    ```
+
+3. Use it in your right panel
+
+
+### Checkpoint #1
+
+![Checkpoint #1](images/seqbook-checkpoint-1.png)
+
+
+## Props vs State
+
+Props are chunks of app state that are passed into your component from a parent
+component.
+
+State is something which changes within a component, which could be used as
+props for it's children.
+
+Yet, both are plain JS objects, deterministic and trigger a render update when
+they change.
+
+<br>
+
+---
+Further explanation: [Props vs
+State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
+
+
+##  Divide & Conquer
+
+- Decompose your UI into different main components (_e.g._, `Header`, `Footer`)
+- Break each main component into smaller, specialized, components
+- Create small components that are reusable (_e.g._, `Button`, `Card`)
+
+
+## 🚀 Hands-on
+
+Let's have fun with React components!
+
+
+### Exercise 2.8
+
+1. Create a `Card` component (in `src/ui/`) that can display a title, a value
+   and *optionally* a unit. Values can be strings or numbers
+2. Use Boostrap `panel` to style this `Card` component
+
+
+### Exercise 2.9
+
+1. Create a `SequenceView` class-based component that takes a `sequence` object
+   as prop. It should render the name of the sequence and the sequence of
+   nucleotides using the `Sequence` component
+2. Use it in your `App.js`
+
+
+### Exercise 2.10
+
+1. Create a `Length` component (in `src/widgets/`) that renders a `Card`
+   displaying the length of the sequence (`PropTypes.string`)
+2. Add it to your `SequenceView` component
+
+
+### Checkpoint #2
+
+![Checkpoint #2](images/seqbook-checkpoint-2.png)
+
+
+### Exercise 2.11
+
+Add a new method `getGCContent()` to `SequenceView` that takes the sequence
+string as input and returns [the percentage of nitrogenous
+bases](https://en.wikipedia.org/wiki/GC-content).
+
+You should call `contentATGC()` on a `Seq` instance, then compute the result of
+the GC content formula:
+
+```js
+const atgc = seq.contentATGC();
+
+const gc = (atgc['G'] + atgc['C']) /
+  (atgc['A'] + atgc['T'] + atgc['G'] + atgc['C']);
+```
+
+
+### Exercise 2.12
+
+Create a new `Card` next to the `Length` one to display the result of
+`getGCContent()`. The title should be "G/C content" and the unit "%".
+
+
+### Checkpoint #3
+
+![Checkpoint #3](images/seqbook-checkpoint-3.png)
+
+
+## Unit testing / Snapshots
+
+Create React App bundles [Jest](https://facebook.github.io/jest/) and you can
+run the test suite with `yarn test` (calling `jest` directly won't work).
+
+
+### Snapshot testing
+
+Also known as "better than nothing" testing. It uses a test renderer to quickly
+generate a serializable value for your React tree and compares it to a
+reference.
+
+<br>
+```bash
+$ yarn add --dev react-test-renderer
+```
+
+<br>
+Documentation: [Snapshot
+testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html)
+
+
+#### Example of a snapshot test
+
+```js
+import React from 'react';
+import renderer from 'react-test-renderer';
+
+import Item from './Item';
+
+it('renders correctly', () => {
+  const tree = renderer.create(
+    <Item title="item title" onSelect={() => {}} />
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+```
+
+
+#### Snapshot file
+
+Jest creates snapshot reference files that must be put under version control!
+
+```bash
+$ cat src/List/__snapshots__/Item.test.js.snap
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<button
+  className="list-group-item"
+  onClick={[Function]}
+>
+  item title
+</button>
+`;
+```
+
+
+#### Updating reference files
+
+If you modify your component, snapshot tests will not pass. You should update
+the snapshot reference files:
+
+```bash
+$ yarn test -- --updateSnapshot
+```
+
+```
+Snapshot Summary
+ › 1 snapshot updated in 1 test suite.
+```
+
+
+### Enzyme
+
+[Enzyme](http://airbnb.io/enzyme/) is a JavaScript Testing utility for React, by
+Airbnb.
+
+<br>
+```bash
+$ yarn add enzyme jest-enzyme --dev
+```
+
+<br>
+Documentation: http://airbnb.io/enzyme/
+
+
+#### Enzyme API
+
+- `shallow()`: use it if you want to test components in isolation from the child
+  components they render;
+- `mount()`: useful when you have components that may interact with DOM APIs, or
+  may require the full lifecycle in order to fully test the component;
+- `render()`: I do not think I have ever used it.
+
+
+#### Example with `shallow()`
+
+```js
+import React from 'react';
+import { shallow } from 'enzyme';
+import { generate } from 'seq-utils';
+
+import List from './index';
+
+it('renders items', () => {
+  const sequences = [ generate(), generate() ];
+  const wrapper = shallow(
+    <List sequences={sequences} onSelectSequence={() => {}} />
+  );
+
+  expect(wrapper.find(Item)).toHaveLength(sequences.length);
+});
+```
+
+
+#### Example with `mount()`
+
+```js
+it('receives event when Item is selected', () => {
+  const sequence = generate();
+  const spy = jest.fn();
+
+  const wrapper = mount(
+    <List sequences={[sequence]} onSelectSequence={spy} />
+  );
+
+  expect(spy).not.toHaveBeenCalled();
+  wrapper.find('button').simulate('click');
+  expect(spy).toHaveBeenCalled();
+});
+```
+
+
+### Code coverage
+
+Use the command below to generate code coverage:
+
+```bash
+$ yarn test -- --coverage
+```
+
+You can open `coverage/lcov-report/index.html` to get the HTML report (which is
+always generated).
+
+
+## 🚀 Hands-on
+
+
+### Exercise 2.13
+
+1. Add snapshot tests  for the following components: `Card`, `Item`, `Length`
+2. Add tests with `shallow()` and `mount()` for the `List` component
+3. Try to improve the overall code coverage (if time allows)
+
+
+### Exercise 2.14
+
+Create a `Complement` widget that renders a `Sequence` configured with the
+complement of a sequence passed to `Complement` as a prop.
+
+You can get the complement of a `Seq` instance by calling `complement()` on it,
+and get the sequence as string by calling `sequence()`.
+
+
+### Checkpoint #4
+
+![Checkpoint #4](images/seqbook-checkpoint-4.png)
+
+
+### Exercise 2.15
+
+Create a `FractionalContent` widget that renders a pie chart showing the content
+of a sequence, using [Victory](http://formidable.com/open-source/victory/docs).
+
+Data for the chart can be retrieved by calling `fractionalContentATGC()` on a
+`Seq` instance, which returns a JavaScript hash map:
+
+```js
+{
+  'A': 0.375,
+  'T': 0.375,
+  'G': 0.125,
+  'C': 0.125
+}
+```
+
+### Checkpoint #5
+
+![Checkpoint #5](images/seqbook-checkpoint-5.png)
+
+
+## Additional information
+
+
+### Lifting state up
+
+There should be a single "source of truth" for any data that changes in a React
+application.
+
+Most of the time, several components need to reflect the same changing data.
+Instead of duplicating the data, lift the shared state up to the closest common
+ancestor.
 
 
 ### Converting a function to a class
@@ -597,53 +1023,5 @@ https://facebook.github.io/react/docs/handling-events.html
 1. Create an ES6 class with the same name that extends `React.Component`
 2. Add a single empty method to it called `render()`
 3. Move the body of the function into the `render()` method
-4. Replace props with this.props in the `render()` body
+4. Replace `props` with `this.props` in the `render()` body
 5. Delete the remaining empty function declaration
-
-
-## 🚀 Hands-on
-
-
-### Exercise 2.5
-
-1. Add a button below the `List` to add new (random) sequences to it
-2. Allow to select a list item and display its information on the right panel
-   (you have to create this panel too)
-
-
-### Solution 2.5
-
-TODO
-
-
-### Forms
-
-
-### Lifting state up
-
-## Props vs State
-
-question 	props	state
-Can get initial value from parent Component?	Yes	Yes
-Can be changed by parent Component?	Yes	No
-Can set default values inside Component?	Yes	Yes
-Can change inside Component?	No	Yes
-Can set initial value for child Components?	Yes	Yes
-Can change in child Components?	Yes	No
-
-- https://github.com/uberVU/react-guide/blob/master/props-vs-state.md
-- https://artsy.github.io/blog/2016/11/14/JS-Glossary/
-
-##  Divide & Conquer
-
-
-### Thinking in React
-
-https://facebook.github.io/react/docs/thinking-in-react.html
-
-
-## Unit testing / Snapshots
-
-HOC
-
-- https://medium.freecodecamp.org/understanding-higher-order-components-6ce359d761b
