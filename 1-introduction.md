@@ -2,7 +2,7 @@
 
 📌 Learning objectives:
 
-- learn some definitions
+- know what is what
 - understand the (relatively) recent JavaScript syntax
 
 

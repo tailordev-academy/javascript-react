@@ -2,8 +2,8 @@
 
 📌 Learning objectives:
 
-- Learn how to talk to an API
-- Get familiar with more libraries
+- learn how to talk to an API
+- get familiar with more libraries
 
 
 ## Fetch and HTTP

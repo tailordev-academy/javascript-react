@@ -2,7 +2,7 @@
 
 📌 Learning objectives:
 
-- Learn to improve your codebase
+- learn to improve your codebase
 
 
 ## Flow types
