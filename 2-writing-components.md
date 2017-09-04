@@ -68,7 +68,7 @@ much more convenient to use it!
 
 <br>
 
----
+–
 Want to write your own JSX renderer? Read [WTF is
 JSX](https://jasonformat.com/wtf-is-jsx/).
 
@@ -159,6 +159,7 @@ export default Item;
 ```
 
 <br>
+
 - Fast, simple to read
 - Should be preferred
 - No lifecycle methods
@@ -210,11 +211,16 @@ elements. Keys help React identify which items have changed, are added, or are
 removed.
 
 <br>
-Documentation: [Lists and Keys
-](https://facebook.github.io/react/docs/lists-and-keys.html)
+
+Documentation: [Lists and Keys](https://facebook.github.io/react/docs/lists-and-keys.html)
 
 
-## CSS classes
+### Lifecycle methods
+
+TODO: write me, maybe add a figure
+
+
+### CSS classes
 
 Every React component has a `className` special attribute to add CSS classes to
 it. You cannot use `class`:
@@ -425,6 +431,7 @@ import PropTypes from 'prop-types';
 you receive is valid.
 
 <br>
+
 Documentation: [Typechecking With
 PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
 
@@ -619,6 +626,7 @@ When passing functions in JSX callbacks, you have to be careful about the
 meaning of `this`.
 
 <br>
+
 Documentation: [Handling Events](https://facebook.github.io/react/docs/handling-events.html)
 
 
@@ -744,7 +752,7 @@ they change.
 
 <br>
 
----
+–
 Further explanation: [Props vs
 State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
 
@@ -834,6 +842,7 @@ $ yarn add --dev react-test-renderer
 ```
 
 <br>
+
 Documentation: [Snapshot
 testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html)
 
@@ -900,6 +909,7 @@ $ yarn add enzyme jest-enzyme --dev
 ```
 
 <br>
+
 Documentation: http://airbnb.io/enzyme/
 
 
