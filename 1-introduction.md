@@ -193,7 +193,7 @@ oneLine`
   foo
   bar
   baz
-`)
+`
 // "foo bar baz"
 ```
 
