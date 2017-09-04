@@ -68,7 +68,6 @@ much more convenient to use it!
 
 <br>
 
-–
 Want to write your own JSX renderer? Read [WTF is
 JSX](https://jasonformat.com/wtf-is-jsx/).
 
@@ -752,7 +751,6 @@ they change.
 
 <br>
 
-–
 Further explanation: [Props vs
 State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
 
