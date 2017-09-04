@@ -410,6 +410,7 @@ In a functional-based component, props are the first argument of the function:
 const Item = (props) => <li>{props.value}</li>;
 
 const List = ({ values }) => (
+  // Shouldn't we add a key per Item here?
   {values.map(val => <Item value={val} />)}
 );
 ```
