@@ -813,7 +813,7 @@ const gc = (atgc['G'] + atgc['C']) /
 ### Exercise 2.12
 
 Create a new `Card` next to the `Length` one to display the result of
-`getGCContent()`. The title should be "G/C content" and the unit "%".
+`getGCContent()`. The title should be "GC content" and the unit "%".
 
 
 ### Checkpoint #3
