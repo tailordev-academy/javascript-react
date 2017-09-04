@@ -26,7 +26,6 @@
 - Consuming APIs
   - fetch and HTTP
   - redux middleware
-  - third-party components
   - routing
 
 
