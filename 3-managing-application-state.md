@@ -317,4 +317,17 @@ TODO
 
 ## Refactoring with selectors
 
-TODO
+Selectors can compute derived data, allowing Redux to store the minimal possible
+state. They are composable and they can be used as input to other selectors.
+
+<br>
+
+See also: the [reselect](https://github.com/reactjs/reselect) library.
+
+
+## 🚀 Hands-on
+
+
+### Exercise 3.2
+
+1. Add a `getCurrentSequence()` and use it in your connected `App` component.
