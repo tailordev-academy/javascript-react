@@ -75,6 +75,8 @@ JSX](https://jasonformat.com/wtf-is-jsx/).
 
 ### Example please
 
+<!-- Nothing is rendered here -->
+
 ``` javascript.player.transpiler
 const simpleElement = <div />
 
