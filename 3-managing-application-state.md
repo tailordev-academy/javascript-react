@@ -86,6 +86,8 @@ The job of reducers is to describe how the application's state changes in
 response to something that happened (which is described by an action):
 
 ```js
+// src/reducers/app.js
+
 const initialState = {};
 
 export default function reducer(state = initialState, action = {}) {
@@ -110,6 +112,37 @@ The store has the following responsibilities:
 - registers listeners via `subscribe(listener)`;
 - handles unregistering of listeners via the function returned by
   `subscribe(listener)`.
+
+
+## Ducks!
+
+[Ducks](https://github.com/erikras/ducks-modular-redux) is a proposal for
+bundling reducers, action types and actions when using Redux. A Ducks module...
+
+- MUST `export default` a `reducer()` function
+- MUST `export` its action creators as functions
+- MAY export its action types as `UPPER_SNAKE_CASE`, if an external reducer
+  needs to listen for them, or if it is a published reusable library
+
+
+### Example of a Duck(s)
+
+```js
+const initialState = {};
+
+// actions (types)
+const ACTION = 'ACTION';
+
+// action creators
+export const action = () => {
+  return { type: ACTION };
+};
+
+// reducer
+export default function reducer(state = initialState, action = {}) {
+  // ...
+}
+```
 
 
 ## Connecting React & Redux
@@ -149,7 +182,7 @@ What does this `configureStore()` method do?
 // src/store/configureStore.js
 import { applyMiddleware, createStore } from 'redux';
 
-import rootReducer from 'store/rootReducer';
+import rootReducer from 'reducers';
 
 const middleware = [];
 const createStoreWithMiddleware = applyMiddleware(...middleware)(
@@ -163,16 +196,16 @@ export default function configureStore(initialState) {
 }
 ```
 
-Heh. `store/rootReducer` you said?
+Heh. What is this `rootReducer`?
 
 
 ### Root reducer
 
 ``` js
-// src/store/rootReducer.js
+// src/reducers/index.js
 import { combineReducers } from 'redux';
 
-import app from 'App/reducer';
+import app from './app';
 // ...other import for reducers
 
 export default combineReducers({
@@ -267,7 +300,7 @@ if (isNotProduction) {
 
 1. Install Redux, React Redux and configure it into your application (install
    the devtools to ease your life)
-2. Create a reducer in `src/App/reducer.js`
+2. Create a reducer in `src/reducers/app.js`
 3. Create the actions to add, remove and select sequences and replace the
    existing code (i.e. move the state from `src/App.js` to your reducer)
 
