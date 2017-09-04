@@ -195,4 +195,64 @@ export default function configureStore(initialState) {
 
 ## Routing
 
-TODO: add a simple page like `About`
+[React Router](https://reacttraining.com/react-router/) is a third-party library
+allowing to deal with different "pages" in your application, in a very React
+way.
+
+``` bash
+yarn add react-router-dom
+```
+
+<br>
+
+Documentation: [React Router
+(web)](https://reacttraining.com/react-router/web/guides/philosophy)
+
+
+### Example
+
+``` js
+ReactDOM.render(
+  <Router>
+    <div>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+      </ul>
+
+      {/* ... */}
+
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+    </div>
+  </Router>
+);
+```
+
+
+### 404 - Not Found
+
+A `<Switch>` component renders the first child `<Route>` that matches. A
+`<Route>` with no path always matches.
+
+``` js
+ReactDOM.render(
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route component={NotFound} />
+    </Switch>
+  </Router>
+);
+```
+
+
+## 🚀 Hands-on
+
+
+### Exercise 4.4
+
+1. Create a new `About` component with some content
+2. Add `react-router-dom` and configure the routing into your application
+3. Add a `NotFound` component to catch `404` (routing) errors
