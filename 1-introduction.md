@@ -189,7 +189,7 @@ Tags allow you to parse template literals with a function. Have a look at the
 ```js
 import { oneLine } from 'common-tags';
 
-oneLine`
+oneLine(`
   foo
   bar
   baz
@@ -295,6 +295,8 @@ console.log(style);
 
 
 #### Async / Await
+
+<!-- TODO -->
 
 ``` javascript.player.web
 ```

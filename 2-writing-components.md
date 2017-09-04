@@ -74,6 +74,8 @@ JSX](https://jasonformat.com/wtf-is-jsx/).
 
 ### Example please
 
+<!-- Nothing is rendered here -->
+
 ``` javascript.player.transpiler
 const simpleElement = <div />
 
@@ -407,6 +409,7 @@ In a functional-based component, props are the first argument of the function:
 const Item = (props) => <li>{props.value}</li>;
 
 const List = ({ values }) => (
+  // Shouldn't we add a key per Item here?
   {values.map(val => <Item value={val} />)}
 );
 ```
@@ -797,8 +800,7 @@ Let's have fun with React components!
 ### Exercise 2.11
 
 Add a new method `getGCContent()` to `SequenceView` that takes the sequence
-string as input and returns [the percentage of nitrogenous
-bases](https://en.wikipedia.org/wiki/GC-content).
+string as input and returns its [GC content](https://en.wikipedia.org/wiki/GC-content).
 
 You should call `contentATGC()` on a `Seq` instance, then compute the result of
 the GC content formula:
