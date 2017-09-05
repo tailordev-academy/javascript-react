@@ -61,8 +61,8 @@ to convert down to ES5.
 
 ES2015 introduces two keywords to declare variables:
 
-- `const`: can only be assigned once,
-- `let`: can be reassigned.
+- `const`: can only be assigned once
+- `let`: can be reassigned
 
 Both `const` and `let` are scoped to a block, not to a function like `var`. Do
 not use `var` anymore, tend to use `const` as much as you can.

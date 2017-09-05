@@ -95,9 +95,9 @@ import React from 'react';
 ```
 
 - `React.Component`: allows to create components, _i.e._ JavaScript classes that
-  can be instantiated with JSX;
+  can be instantiated with JSX
 - `React.PureComponent`: allows to create read-only components, _i.e._
-  components only used for display purpose.
+  components only used for display purpose
 
 
 ### `ReactDOM`
@@ -107,9 +107,9 @@ import ReactDOM from 'react-dom';
 ```
 
 - `ReactDOM.render()`: allows to render React components to the DOM, _i.e._ it
-  converts components into HTML;
+  converts components into HTML
 - Provides many HTML-like components (DOM tags), _e.g._, `<div />`, `<span />`,
-  etc.
+  etc
 
 
 ### Class component
@@ -923,10 +923,10 @@ Documentation: http://airbnb.io/enzyme/.
 #### Enzyme API
 
 - `shallow()`: use it if you want to test components in isolation from the child
-  components they render;
+  components they render
 - `mount()`: useful when you have components that may interact with DOM APIs, or
-  may require the full lifecycle in order to fully test the component;
-- `render()`: I do not think I have ever used it.
+  may require the full lifecycle in order to fully test the component
+- `render()`: I do not think I have ever used it
 
 
 #### Example with `shallow()`
