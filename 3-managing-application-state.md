@@ -106,12 +106,12 @@ export default function reducer(state = initialState, action = {}) {
 
 The store has the following responsibilities:
 
-- holds application state;
-- allows access to state via `getState()`;
-- allows state to be updated via `dispatch(action)`;
-- registers listeners via `subscribe(listener)`;
+- holds application state
+- allows access to state via `getState()`
+- allows state to be updated via `dispatch(action)`
+- registers listeners via `subscribe(listener)`
 - handles unregistering of listeners via the function returned by
-  `subscribe(listener)`.
+  `subscribe(listener)`
 
 
 ## Ducks!
@@ -152,7 +152,7 @@ $ yarn add react-redux redux
 ```
 
 
-### Presentational and Container Components
+### Presentational vs Container Components
 
 TODO: write me
 
@@ -176,7 +176,7 @@ ReactDOM.render(
 What does this `configureStore()` method do?
 
 
-### Configure store
+### Configuring the store
 
 ``` js
 // src/store/configureStore.js
@@ -199,7 +199,7 @@ export default function configureStore(initialState) {
 Heh. What is this `rootReducer`?
 
 
-### Root reducer
+### The root reducer
 
 ``` js
 // src/reducers/index.js
@@ -231,9 +231,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 ### `map*ToProps()`
 
 - `mapStateToProps()` tells how to transform the current Redux store state into
-  the props you want to pass to the component wrapped with `connect()`;
+  the props you want to pass to the component wrapped with `connect()`
 - `mapDispatchToProps()` receives the `dispatch()` method and returns
-  callback props that you want to inject into the component.
+  callback props that you want to inject into the component
 
 
 ## (Redux) Dev Tools
