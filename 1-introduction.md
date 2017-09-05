@@ -70,7 +70,7 @@ not use `var` anymore, tend to use `const` as much as you can.
 
 #### Block scoped declarations – Example
 
-``` javascript.player.transpiler
+``` js.player.transpiler
 const a = 1;
 let str = 'Hello, World';
 
@@ -88,7 +88,7 @@ if (true) {
 
 #### Arrow functions
 
-``` javascript.player.transpiler
+``` js.player.transpiler
 const foo = () => 'bar'
 
 this.items.map(x => this.doSomethingWith(x))
@@ -110,7 +110,7 @@ functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functi
 
 #### Destructuring
 
-``` javascript.player.transpiler
+``` js.player.transpiler
 // arrays
 const values = ['one', 'two', 'three', 'four'];
 const [one, two, ...others] = values;
@@ -137,7 +137,7 @@ assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Op
 
 #### Imports – Example
 
-``` javascript.player.transpiler
+``` js.player.transpiler
 // import the default export
 import React from 'react';
 
@@ -151,7 +151,7 @@ import { Component, Children } from 'react';
 
 #### Exports – Example
 
-``` javascript.player.transpiler
+``` js.player.transpiler
 const React = () => {};
 
 // default export
@@ -165,7 +165,7 @@ export const PI = 3.14;
 
 #### Template literals (strings)
 
-``` javascript.player.transpiler
+``` js.player.transpiler
 // multiline strings
 const multiline = `string text line 1
 string text line 2`;
@@ -200,7 +200,7 @@ oneLine`
 
 #### Default parameters
 
-``` javascript.player.console
+``` js.player.console
 const sayHello = (name = 'World') => {
   console.log(`Hello, ${name}!`);
 };
@@ -215,7 +215,7 @@ sayHello(null);
 
 #### Classes
 
-``` javascript.player.console
+``` js.player.console
 class Calculator {
   constructor(value1, value2) {
     this.value1 = value1
@@ -240,7 +240,7 @@ console.log(Calculator.multiply(2, 3))
 
 #### Dynamic object keys
 
-``` javascript.player.console
+``` js.player.console
 const attribute = 'color';
 const style = {
   [attribute]: 'white',
@@ -252,7 +252,7 @@ console.log(style.color);
 
 #### Array spread
 
-``` javascript.player.console
+``` js.player.console
 const foo = ['a', 'b', 'c'];
 const bar = ['d', 'e', 'f'];
 
@@ -266,7 +266,7 @@ console.log([...foo, ...bar]);
 
 #### Static class properties
 
-``` javascript.player.console
+``` js.player.console
 class Foo {
   static bar = 'hello';
 }
@@ -277,7 +277,7 @@ console.log(Foo.bar);
 
 #### Object Spread
 
-``` javascript.player.console
+``` js.player.console
 const defaultStyle = {
   color: 'black',
   fontSize: 12,
@@ -298,7 +298,7 @@ console.log(style);
 
 TODO
 
-``` javascript.player.web
+``` js.player.web
 ```
 
 
@@ -332,7 +332,7 @@ compound of letters (_nucleotides_):
 
 ### Solution 1.1
 
-``` javascript
+``` js
 // index.js
 export const generate = () => {
   const nucleotides = ['A', 'T', 'C', 'G'];
@@ -372,7 +372,7 @@ No tests found
 
 ### Jest 101
 
-```javascript
+``` js
 // index.test.js
 import { generate } from './index;
 
@@ -421,7 +421,7 @@ Ran all test suites.
 
 Edit `package.json` to update the `test` script entry:
 
-``` javascript
+``` js
 "scripts": {
   "test": "jest"
 }
@@ -443,7 +443,7 @@ $ npm test
 
 ### Solution 1.2
 
-``` javascript
+``` js
 // index.test.js
 import { generate } from './index;
 
@@ -482,7 +482,7 @@ Documentation: https://babeljs.io/
 NPM scripts are custom scripts that can be run _via_ `npm run`. It is similar to
 `Makefile` targets, except that it is bundled in the `package.json` file:
 
-``` javascript
+``` js
 "scripts": {
   "test": "jest",
   "build": "babel index.js --out-dir dist/"
@@ -498,7 +498,7 @@ $ npm run build
 
 1. Overriding the main module in `package.json`:
 
-  ``` javascript
+  ``` js
   {
      "main": "dist/index.js",
      ...
@@ -522,7 +522,7 @@ $ npm run build
 
 4\. Add a hook to automatically build the dist files:
 
-  ``` javascript
+  ``` json
   "scripts": {
     "build": ...,
     "prepublish": "npm run build"
@@ -536,12 +536,12 @@ $ npm pack
 ```
 
 ``` bash
-$ tar tf utils-1.0.0.tgz
+$ tar tf seq-utils-1.0.0.tgz
 package/package.json
 package/.npmignore
 package/.babelrc
 package/dist/index.js
-package/utils-1.0.0.tgz
+package/seq-utils-1.0.0.tgz
 ```
 
 
