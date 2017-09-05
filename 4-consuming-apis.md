@@ -1,4 +1,4 @@
-# Consuming APIs
+## Consuming APIs
 
 📌 Learning objectives:
 
@@ -91,19 +91,11 @@ export const callAPI = id => {
 ### Redux Persist
 
 [Redux Persist](https://github.com/rt2zz/redux-persist) allows to automatically
-persist and rehydrate a redux store (in `localStorage` for example).
+persist and rehydrate a Redux store (in `localStorage` for example).
 
 ``` bash
 $ yarn add redux-persist
 ```
-
-
-#### Middleware vs Enhancers
-
-Redux Persist is not a middleware _per se_ but an _enhancer_. It adds extra
-functionality to the store when you call `createStore()`.
-
-Middleware enhances the store at the `dispatch()` level.
 
 
 #### Usage (with devtools extension)
@@ -144,6 +136,14 @@ export default function configureStore(initialState) {
   return store;
 }
 ```
+
+
+### Middleware vs Enhancers
+
+Redux Persist is not a middleware _per se_ but an _enhancer_. It adds extra
+functionality to the store when you call `createStore()`.
+
+Middleware enhances the store at the `dispatch()` level.
 
 
 ## 🚀 Hands-on
@@ -194,6 +194,11 @@ yet)
 
 ## Routing
 
+TODO: add def
+
+
+### React Router
+
 [React Router](https://reacttraining.com/react-router/) is a third-party library
 allowing to deal with different "pages" in your application, in a very React
 way.
@@ -208,7 +213,7 @@ Documentation: [React Router
 (web)](https://reacttraining.com/react-router/web/guides/philosophy)
 
 
-### Example
+#### Example
 
 ``` js
 ReactDOM.render(
@@ -229,7 +234,7 @@ ReactDOM.render(
 ```
 
 
-### 404 - Not Found
+#### 404 - Not Found
 
 A `<Switch>` component renders the first child `<Route>` that matches. A
 `<Route>` with no path always matches.

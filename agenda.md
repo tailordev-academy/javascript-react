@@ -10,7 +10,7 @@
 - Writing components
   - the JSX syntax
   - dealing with data (props / state)
-  - receiving user’s events
+  - receiving user's events
   - divide and conquer
   - unit testing / snapshots
 
@@ -25,7 +25,7 @@
   - unit testing
 - Consuming APIs
   - fetch and HTTP
-  - redux middleware
+  - Redux middleware
   - routing
 
 
