@@ -237,7 +237,19 @@ ReactDOM.render(<List />, document.querySelector('#app'));
 
 ### Lifecycle methods
 
-TODO: write me, maybe add a figure
+Each component has several "lifecycle methods" that you can override to run code
+at particular times in the process.
+
+- Mounting: when an instance of a component is being created and inserted into
+the DOM
+- Updating: when a component is being re-rendered, triggered by changes to props
+  or state
+- Unmounting: when a component is being removed from the DOM
+
+
+#### Diagram
+
+TODO: inspiration https://cdn-images-1.medium.com/max/1600/0*VoYsN6eq7I_wjVV5.png
 
 
 ### CSS classes
@@ -707,7 +719,65 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ## Forms
 
-TODO: write me, should talk about controlled/uncontrolled inputs
+How to get user's input data with React?
+
+<br>
+
+Documentation: [Forms](https://facebook.github.io/react/docs/forms.html).
+
+
+### Controlled components
+
+In HTML, form elements (`input`, `textarea`, etc.) maintain their own state. In
+React, we usually keep state in the component. A controlled components is a form
+element whose value is controlled by React.
+
+
+#### Example
+
+``` javascript.player.web
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { search: '' };
+  }
+
+  handleOnChange = event => {
+    // Commenting the line below should help you understand why
+    // the `input` is controlled.
+    this.setState({ search: event.target.value });
+  };
+
+  render() {
+    return (
+      <div>
+        <input
+          value={this.state.search}
+          onChange={this.handleOnChange}
+          type="text"
+        />
+        <p>Value is: {this.state.search}</p>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Search />, document.querySelector('#app'));
+```
+
+
+### Uncontrolled components
+
+Uncontrolled components means form data is handled by the DOM itself, but it is
+rarely useful.
+
+<br>
+
+Documentation: [Uncontrolled
+components](https://facebook.github.io/react/docs/uncontrolled-components.html).
 
 
 ## 🚀 Hands-on
