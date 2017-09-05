@@ -50,6 +50,8 @@ $ yarn add isomorphic-fetch
 
 ## Redux middleware
 
+TODO: write something about middleware
+
 
 ### Redux Thunk
 
@@ -84,47 +86,6 @@ export const callAPI = id => {
   };
 };
 ```
-
-
-## 🚀 Hands-on
-
-
-Ensembl is a project to automate the annotation of the human genome. They expose
-a [REST(-ish) API](http://rest.ensembl.org/). Given a "Ensembl stable ID", it is
-possible to retrieve a sequence.
-
-You can find Ensembl identifiers [on this
-page](http://www.ensembl.org/Multi/Search/Results?site=ensembl;page=1;facet_feature_type=Gene;q=human)
-(`ENSG...`).
-
-<br>
-
-``` bash
-$ http --json http://rest.ensembl.org/sequence/id/ENSG00000274347
-```
-
-(Install [HTTPie](https://github.com/jakubroztocil/httpie) if you do not use it
-yet)
-
-
-### Exercise 4.1
-
-1. Install `redux-thunk` and `isomorphic-fetch`
-
-
-### Exercise 4.2
-
-1. Create a `EnsemblSearch` component that renders a `form` with a search bar
-   (`input`) and a `button` to trigger the search
-2. Create a `ensembl` reducer that fetches a sequence from the Ensembl API given
-   an identifier. Error handling is at the very least a `alert()` call
-3. The `button` should be disabled when input is empty and should be replaced by
-   a _loading_ message when API is called
-
-
-### Checkpoint #7
-
-![Checkpoint #7](images/seqbook-checkpoint-7.gif)
 
 
 ### Redux Persist
@@ -186,6 +147,44 @@ export default function configureStore(initialState) {
 
 
 ## 🚀 Hands-on
+
+
+Ensembl is a project to automate the annotation of the human genome. They expose
+a [REST(-ish) API](http://rest.ensembl.org/). Given a "Ensembl stable ID", it is
+possible to retrieve a sequence.
+
+You can find Ensembl identifiers [on this
+page](http://www.ensembl.org/Multi/Search/Results?site=ensembl;page=1;facet_feature_type=Gene;q=human)
+(`ENSG...`).
+
+<br>
+
+``` bash
+$ http --json http://rest.ensembl.org/sequence/id/ENSG00000274347
+```
+
+(Install [HTTPie](https://github.com/jakubroztocil/httpie) if you do not use it
+yet)
+
+
+### Exercise 4.1
+
+1. Install `redux-thunk` and `isomorphic-fetch`
+
+
+### Exercise 4.2
+
+1. Create a `EnsemblSearch` component that renders a `form` with a search bar
+   (`input`) and a `button` to trigger the search
+2. Create a `ensembl` reducer that fetches a sequence from the Ensembl API given
+   an identifier. Error handling is at the very least a `alert()` call
+3. The `button` should be disabled when input is empty and should be replaced by
+   a _loading_ message when API is called
+
+
+### Checkpoint #7
+
+![Checkpoint #7](images/seqbook-checkpoint-7.gif)
 
 
 ### Exercise 4.3
