@@ -211,7 +211,28 @@ removed.
 
 <br>
 
-Documentation: [Lists and Keys](https://facebook.github.io/react/docs/lists-and-keys.html)
+Documentation: [Lists and
+Keys](https://facebook.github.io/react/docs/lists-and-keys.html).
+
+
+#### Example
+
+``` javascript.player.web
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+const Item = () => <li>42</li>;
+
+const List = () => (
+  <ul>
+    <Item key="1" />
+    <Item key="2" />
+    <Item key="3" />
+  </ul>
+);
+
+ReactDOM.render(<List />, document.querySelector('#app'));
+```
 
 
 ### Lifecycle methods
@@ -234,26 +255,6 @@ const Component = (props) => (
 
 It is advised to use the same `className` as the component name but you can do
 whatever you like.
-
-
-### Example
-
-``` javascript.player.web
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
-const Item = () => <li>42</li>;
-
-const List = () => (
-  <ul>
-    <Item key="1" />
-    <Item key="2" />
-    <Item key="3" />
-  </ul>
-);
-
-ReactDOM.render(<List />, document.querySelector('#app'));
-```
 
 
 ### `<App />`
@@ -297,6 +298,12 @@ ReactDOM.render(<App />, document.querySelector('#app'));
     $ yarn add bootstrap@3
     ```
 
+    ``` js
+    // src/index.js
+    import 'bootstrap/dist/css/bootstrap.css';
+    import 'bootstrap/dist/css/bootstrap-theme.css';
+    ```
+
 
 ### Exercise 2.1
 
@@ -304,7 +311,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 2. Import and use it in the existing `App` component
 
 
-### Solution 2.1
+### Solution 2.1 (The component)
 
 ``` javascript
 import React from 'react';
@@ -324,7 +331,7 @@ export default Header;
 ```
 
 
-### Solution 2.1
+### Solution 2.1 (Use of the component)
 
 ``` javascript
 class App extends Component {
@@ -345,7 +352,7 @@ class App extends Component {
 ```
 
 
-### Absolute imports
+## Absolute imports
 
 Instead of using relative imports, we can use absolute imports, which is more
 convenient:
@@ -432,10 +439,10 @@ you receive is valid.
 <br>
 
 Documentation: [Typechecking With
-PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
+PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html).
 
 
-### PropTypes on class-based components
+#### PropTypes on class-based components
 
 ```js
 class Item extends React.Component {
@@ -457,7 +464,7 @@ class Item extends React.Component {
 ```
 
 
-### PropTypes on functional components
+#### PropTypes on functional components
 
 ```js
 const Item = (props) => <li>{props.title}</li>;
@@ -626,7 +633,8 @@ meaning of `this`.
 
 <br>
 
-Documentation: [Handling Events](https://facebook.github.io/react/docs/handling-events.html)
+Documentation: [Handling
+Events](https://facebook.github.io/react/docs/handling-events.html).
 
 
 ### Example
@@ -697,7 +705,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
 
-### Forms
+## Forms
 
 TODO: write me, should talk about controlled/uncontrolled inputs
 
@@ -752,7 +760,7 @@ they change.
 <br>
 
 Further explanation: [Props vs
-State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
+State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md).
 
 
 ##  Divide & Conquer
@@ -834,6 +842,7 @@ generate a serializable value for your React tree and compares it to a
 reference.
 
 <br>
+
 ```bash
 $ yarn add --dev react-test-renderer
 ```
@@ -841,7 +850,7 @@ $ yarn add --dev react-test-renderer
 <br>
 
 Documentation: [Snapshot
-testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html)
+testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html).
 
 
 #### Example of a snapshot test
@@ -861,7 +870,7 @@ it('renders correctly', () => {
 ```
 
 
-#### Snapshot file
+#### Example of a reference file
 
 Jest creates snapshot reference files that must be put under version control!
 
@@ -901,13 +910,14 @@ Snapshot Summary
 Airbnb.
 
 <br>
+
 ```bash
 $ yarn add enzyme jest-enzyme --dev
 ```
 
 <br>
 
-Documentation: http://airbnb.io/enzyme/
+Documentation: http://airbnb.io/enzyme/.
 
 
 #### Enzyme API
