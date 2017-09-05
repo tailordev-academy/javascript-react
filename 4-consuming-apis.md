@@ -255,4 +255,5 @@ ReactDOM.render(
 
 1. Create a new `About` component with some content
 2. Add `react-router-dom` and configure the routing into your application
-3. Add a `NotFound` component to catch `404` (routing) errors
+3. Rename the `App` component to `Home`
+4. Add a `NotFound` component to catch `404` (routing) errors
