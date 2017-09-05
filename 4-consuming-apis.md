@@ -257,3 +257,4 @@ ReactDOM.render(
 2. Add `react-router-dom` and configure the routing into your application
 3. Rename the `App` component to `Home`
 4. Add a `NotFound` component to catch `404` (routing) errors
+5. Move your routing code (inside `Router`) into a `src/Seqbook.js` file
