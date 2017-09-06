@@ -381,7 +381,28 @@ class App extends Component {
 ```
 
 
-## Absolute imports
+## About imports
+
+
+### Index or not index?
+
+A component can be written in
+
+- `src/ComponentName.js`
+- `src/ComponentName/index.js`
+
+<br>
+
+It will be equally imported with:
+
+``` js
+import ComponentName from './ComponentName';
+```
+
+Prefer the directory approach (explained later).
+
+
+### Absolute imports
 
 Instead of using relative imports, we can use absolute imports, which is more
 convenient:
