@@ -1,5 +1,5 @@
 (function(document) {
-  const url = '/assets/rnwp-1.10.0/index.html';
+  const url = './assets/rnwp-1.10.0/index.html';
   const snippets = Array.prototype.slice.call(document.querySelectorAll('pre code'));
 
   snippets
