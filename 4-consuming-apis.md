@@ -194,7 +194,11 @@ yet)
 
 ## Routing
 
-TODO: add def
+On the server, routing refers to determining how an application responds to a
+client request to a particular.
+
+On the client, it is similar: deciding which views to display according to the
+URL browsed by the user.
 
 
 ### React Router
