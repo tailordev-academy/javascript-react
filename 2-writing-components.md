@@ -269,6 +269,25 @@ It is advised to use the same `className` as the component name but you can do
 whatever you like.
 
 
+#### `classnames`
+
+The [classnames](https://github.com/JedWatson/classnames) library is very useful
+to deal with different CSS class names in JavaScript:
+
+``` js
+import classNames from 'classnames';
+
+classNames('foo', 'bar');
+// => 'foo bar'
+
+classNames('foo', { bar: true });
+// => 'foo bar'
+
+classNames('foo', { bar: false });
+// => 'foo'
+```
+
+
 ### `<App />`
 
 ``` javascript.player.web
