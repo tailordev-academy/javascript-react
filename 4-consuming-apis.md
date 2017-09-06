@@ -73,10 +73,10 @@ export const callAPI = id => {
 
     fetch(`https://example.org/api/endpoint/${id}`)
       .then((response) => {
-        // TODO: throw Error if response is not successful
+        // TODO: throw Error when response is not successful
         return response.json();
       })
-      // only if request is OK
+      // only executed when request is OK
       .then(json => dispatch(loadResults(json)))
       // request has failed
       .catch(error => dispatch(displayError(error)))
