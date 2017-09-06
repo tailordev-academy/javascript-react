@@ -595,9 +595,6 @@ Please, do not do that during the training session.
 1. Create a NPM module
 
 
-## 🚀 Hands-on
-
-
 ### Exercise 1.4
 
 In the sequel, we will use [NtSeq](https://github.com/keithwhor/NtSeq), a

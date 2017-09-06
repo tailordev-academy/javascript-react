@@ -247,9 +247,7 @@ the DOM
 - Unmounting: when a component is being removed from the DOM
 
 
-#### Diagram
-
-TODO: inspiration https://cdn-images-1.medium.com/max/1600/0*VoYsN6eq7I_wjVV5.png
+![React lifecycle methods](images/lifecycle-methods.png)
 
 
 ### CSS classes
