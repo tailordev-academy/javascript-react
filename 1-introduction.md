@@ -260,6 +260,9 @@ console.log(...foo);
 console.log([...foo, ...bar]);
 ```
 
+[MDN Spread
+syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+
 
 ### ESNext
 
