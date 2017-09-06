@@ -1,5 +1,5 @@
 (function(document) {
-  const url = 'https://cdn.rawgit.com/dabbott/react-native-web-player/gh-v1.10.0/index.html';
+  const url = '/assets/rnwp-1.10.0/index.html';
   const snippets = Array.prototype.slice.call(document.querySelectorAll('pre code'));
 
   snippets

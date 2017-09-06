@@ -70,7 +70,7 @@ not use `var` anymore, tend to use `const` as much as you can.
 
 #### Block scoped declarations – Example
 
-``` js.player.transpiler
+``` javascript.player.transpiler
 const a = 1;
 let str = 'Hello, World';
 
@@ -88,7 +88,7 @@ if (true) {
 
 #### Arrow functions
 
-``` js.player.transpiler
+``` javascript.player.transpiler
 const foo = () => 'bar'
 
 this.items.map(x => this.doSomethingWith(x))
@@ -110,7 +110,7 @@ functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functi
 
 #### Destructuring
 
-``` js.player.transpiler
+``` javascript.player.transpiler
 // arrays
 const values = ['one', 'two', 'three', 'four'];
 const [one, two, ...others] = values;
@@ -137,7 +137,7 @@ assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Op
 
 #### Imports – Example
 
-``` js.player.transpiler
+``` javascript.player.transpiler
 // import the default export
 import React from 'react';
 
@@ -151,7 +151,7 @@ import { Component, Children } from 'react';
 
 #### Exports – Example
 
-``` js.player.transpiler
+``` javascript.player.transpiler
 const React = () => {};
 
 // default export
@@ -165,7 +165,7 @@ export const PI = 3.14;
 
 #### Template literals (strings)
 
-``` js.player.transpiler
+``` javascript.player.transpiler
 // multiline strings
 const multiline = `string text line 1
 string text line 2`;
@@ -200,7 +200,7 @@ oneLine`
 
 #### Default parameters
 
-``` js.player.console
+``` javascript.player.console
 const sayHello = (name = 'World') => {
   console.log(`Hello, ${name}!`);
 };
@@ -215,7 +215,7 @@ sayHello(null);
 
 #### Classes
 
-``` js.player.console
+``` javascript.player.console
 class Calculator {
   constructor(value1, value2) {
     this.value1 = value1
@@ -240,7 +240,7 @@ console.log(Calculator.multiply(2, 3))
 
 #### Dynamic object keys
 
-``` js.player.console
+``` javascript.player.console
 const attribute = 'color';
 const style = {
   [attribute]: 'white',
@@ -252,7 +252,7 @@ console.log(style.color);
 
 #### Array spread
 
-``` js.player.console
+``` javascript.player.console
 const foo = ['a', 'b', 'c'];
 const bar = ['d', 'e', 'f'];
 
@@ -266,7 +266,7 @@ console.log([...foo, ...bar]);
 
 #### Static class properties
 
-``` js.player.console
+``` javascript.player.console
 class Foo {
   static bar = 'hello';
 }
@@ -277,7 +277,7 @@ console.log(Foo.bar);
 
 #### Object Spread
 
-``` js.player.console
+``` javascript.player.console
 const defaultStyle = {
   color: 'black',
   fontSize: 12,
