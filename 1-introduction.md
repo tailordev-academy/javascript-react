@@ -296,10 +296,37 @@ console.log(style);
 
 #### Async / Await
 
-TODO
+The purpose of `async`/`await` functions is to simplify the behavior of using
+promises synchronously.
 
-``` js.player.web
+``` js
+// Promise chain
+return fetch(endpoint) // return a Promise
+  .then(response => response.json())
+  .then(json => {
+    console.log(json);
+  })
+  .catch(error => {
+    console.error(error);
+  });
 ```
+
+
+##### Example
+
+``` js
+try {
+  const response = await fetch(endpoint);
+  const json = await response.json();
+
+  console.log(json);
+} catch (error) {
+  console.error(error);
+}
+```
+
+[MDN Async
+Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 
 
 ## 🚀 Hands-on
