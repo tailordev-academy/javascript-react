@@ -1,4 +1,4 @@
-## Consuming APIs
+# Consuming APIs
 
 📌 Learning objectives:
 
