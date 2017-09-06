@@ -4,34 +4,51 @@
 ## Agenda // Day 1
 
 - Introduction
-  - what is React?
-  - what is Flux?
+  - What is React?
+  - What is Flux?
   - Modern JavaScript
+  - Unit testing
+  - Transpilation with Babel
+  - Code coverage
+
+
+## Agenda // Day 1
+
 - Writing components
-  - the JSX syntax
-  - dealing with data (props / state)
-  - receiving user's events
-  - divide and conquer
-  - unit testing / snapshots
+  - The JSX syntax
+  - Absolute imports
+  - Dealing with data (props / state)
+  - Receiving user's events
+  - Forms
+  - Divide and conquer
+  - Unit testing / snapshots
+  - Additional information
 
 
 ## Agenda // Day 2
 
 - Managing application state
-  - what is Redux?
-  - state tree, immutability, pure functions
-  - writing reducers, action creators and actions
-  - connecting React and Redux
-  - unit testing
+  - What is Redux?
+  - Writing reducers, action creators and actions
+  - Ducks!
+  - Connecting React and Redux
+  - (Redux) dev tools
+  - Unit testing
+  - Refactoring with selectors
+
+
+## Agenda // Day 2
+
 - Consuming APIs
-  - fetch and HTTP
+  - Fetch and HTTP
   - Redux middleware
-  - routing
+  - Routing
 
 
 ## Agenda // Day 2+
 
 - The sky is the limit!
   - Flow types
-  - performance optimization
-  - more on testing
+  - Performance optimization
+  - More on testing
+  - Server-Side Rendering
