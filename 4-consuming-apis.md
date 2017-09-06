@@ -50,7 +50,14 @@ $ yarn add isomorphic-fetch
 
 ## Redux middleware
 
-TODO: write something about middleware
+The best feature of middleware is that it is composable in a chain. Redux
+middleware provides (third-party) extension points between dispatching actions
+and the moment reducers are reached.
+
+<br>
+
+Documentation: [Redux
+Middleware](http://redux.js.org/docs/advanced/Middleware.html).
 
 
 ### Redux Thunk
