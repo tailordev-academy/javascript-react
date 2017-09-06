@@ -347,7 +347,28 @@ if (isNotProduction) {
 
 ## Unit testing
 
-TODO
+Pure functions are easily testable, _i.e._ reducers and action creators can be
+fully unit tested (with Jest).
+
+``` js
+describe('reducer()', () => {
+  it('initializes properly', () => {
+    const state = reducer(undefined);
+    expect(state).toEqual({
+      currentSequenceId: null,
+      sequences: [],
+    });
+  });
+
+  it('can add a sequence', () => {
+    const sequence = generate();
+    const state = reducer(undefined, addSequence(sequence));
+    expect(state.sequences).toContain(sequence);
+  });
+
+  // ...
+});
+```
 
 
 ## Refactoring with selectors
@@ -365,4 +386,5 @@ See also: the [reselect](https://github.com/reactjs/reselect) library.
 
 ### Exercise 3.2
 
-1. Add a `getCurrentSequence()` and use it in your connected `App` component.
+1. Add unit tests for the `app` reducer (`app.test.js`)
+2. Add a `getCurrentSequence()` and use it in your connected `App` component
