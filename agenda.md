@@ -16,7 +16,7 @@
 
 - Writing components
   - The JSX syntax
-  - Absolute imports
+  - About imports
   - Dealing with data (props / state)
   - Receiving user's events
   - Forms
