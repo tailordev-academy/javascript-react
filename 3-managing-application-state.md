@@ -251,23 +251,24 @@ internal state (functional components).
 #### Directory structure
 
 ```
-src/EnsemblSearch
+src/App
 ├── index.js        # Container/Connected component
 ├── presenter.js    # Presentational component
 └── styles.css
 ```
 
 ``` js
-// src/EnsemblSearch/index.js
+// src/App/index.js
 import { connect } from 'react-redux';
-import EnsemblSearch from './presenter';
-import { fetchSequence } from 'reducers/ensembl';
+
+import { addSequence } from 'reducers/app';
+import App from './presenter';
 
 const mapStateToProps = state => { /* ... */ };
 
 const mapDispatchToProps = dispatch => { /* ... */ };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EnsemblSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 ```
 
 
@@ -337,7 +338,8 @@ if (isNotProduction) {
    the devtools to ease your life)
 2. Create a reducer in `src/reducers/app.js`
 3. Create the actions to add, remove and select sequences and replace the
-   existing code (i.e. move the state from `src/App.js` to your reducer)
+   existing code, _i.e._ move the state from `src/App.js` to your reducer
+4. Use the directory structure for the `App` component
 
 
 ### Checkpoint #6
@@ -346,6 +348,71 @@ if (isNotProduction) {
 
 
 ## Unit testing
+
+
+### Presentational components
+
+Now, your test suite should fail because you are testing the container/connected
+component.
+
+Another advantage of the "directory structure" for components is that you can
+test the presentational components in isolation.
+
+
+#### Example
+
+``` js
+// src/App/presenter.test.js
+import React from 'react';
+import { shallow } from 'enzyme';
+
+import App from './presenter';
+
+it('renders without crashing', () => {
+  const wrapper = shallow(
+    <App
+      sequences={[]}
+      onAddSequence={jest.fn()}
+      onRemoveSequence={jest.fn()}
+      onSelectSequence={jest.fn()}
+    />
+  );
+  expect(wrapper.hasClass('App')).toEqual(true);
+});
+```
+
+
+### Container components
+
+You can `export` and test the `map*ToProps()`.
+
+If you want to write "integration tests", you can `mount()` the component you
+want to test into `<Provider />` and manually create a `store`.
+
+
+#### Example
+
+``` js
+import React from 'react';
+import { mount } from 'enzyme';
+import { Provider } from 'react-redux';
+
+import configureStore from 'store/configureStore';
+import Home from './index';
+
+it('renders without crashing', () => {
+  const store = configureStore();
+  const wrapper = mount(
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  );
+  expect(wrapper.hasClass('Home')).toEqual(true);
+});
+```
+
+
+### Redux
 
 Pure functions are easily testable, _i.e._ reducers and action creators can be
 fully unit tested (with Jest).
@@ -387,4 +454,5 @@ See also: the [reselect](https://github.com/reactjs/reselect) library.
 ### Exercise 3.2
 
 1. Add unit tests for the `app` reducer (`app.test.js`)
-2. Add a `getCurrentSequence()` and use it in your connected `App` component
+2. Add a `getCurrentSequence()` selector and use it in your connected `App`
+   component
