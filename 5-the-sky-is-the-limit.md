@@ -3,6 +3,7 @@
 📌 Learning objectives:
 
 - learn to improve your codebase
+- hear about advanced concepts
 
 
 ## Flow types

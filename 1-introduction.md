@@ -303,29 +303,33 @@ The purpose of `async`/`await` functions is to simplify the behavior of using
 promises synchronously.
 
 ``` js
-// Promise chain
-return fetch(endpoint) // return a Promise
-  .then(response => response.json())
-  .then(json => {
-    console.log(json);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+const printJSON = (endpoint) => {
+  // Promise chain
+  return fetch(endpoint) // return a Promise
+    .then(response => response.json())
+    .then(json => {
+      console.log(json);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+};
 ```
 
 
 ##### Example
 
 ``` js
-try {
-  const response = await fetch(endpoint);
-  const json = await response.json();
+const printJSON = async (endpoint) => {
+  try {
+    const response = await fetch(endpoint);
+    const json = await response.json();
 
-  console.log(json);
-} catch (error) {
-  console.error(error);
-}
+    console.log(json);
+  } catch (error) {
+    console.error(error);
+  }
+};
 ```
 
 [MDN Async
