@@ -28,10 +28,10 @@ Documentation: https://facebook.github.io/flux/
 
 ## What is Flux?
 
-[Redux](http://redux.js.org/) is *one* implementation of the Flux pattern. It is
-now the reference and works well with React.
+[Redux](http://redux.js.org/) is *one* (partial) implementation of the Flux
+pattern. It is now the reference and works well with React.
 
-More about it tomorrow!
+More about it later!
 
 
 ## Modern JavaScript
@@ -44,7 +44,7 @@ implement JavaScript.
 
 ES5 is supported by all browsers, but lacks very interesting features. It is the
 JavaScript language you likely know. `jQuery` used to be a great library back
-then.
+then 😅
 
 
 ### ES2015 (ES6)
@@ -65,7 +65,7 @@ ES2015 introduces two keywords to declare variables:
 - `let`: can be reassigned
 
 Both `const` and `let` are scoped to a block, not to a function like `var`. Do
-not use `var` anymore, tend to use `const` as much as you can.
+not use `var` anymore, you should use `const` as much as you can.
 
 
 #### Block scoped declarations – Example
@@ -408,7 +408,7 @@ No tests found
 
 ``` js
 // index.test.js
-import { generate } from './index;
+import { generate } from './index';
 
 test('it generates sequences', () => {
   // TODO: add assertions
@@ -513,7 +513,7 @@ Documentation: https://babeljs.io/
 
 ### NPM scripts
 
-NPM scripts are custom scripts that can be run _via_ `npm run`. It is similar to
+NPM scripts are custom scripts that can be run with `npm run`. It is similar to
 `Makefile` targets, except that it is bundled in the `package.json` file:
 
 ``` js
@@ -563,7 +563,7 @@ $ npm run build
   }
   ```
 
-That's it! Now we can test it:
+That's it! Now we can package the library:
 
 ``` bash
 $ npm pack
@@ -588,7 +588,9 @@ https://gist.github.com/coolaj86/1318304. Then, publish:
 $ npm publish ./
 ```
 
-Please, do not do that during the training session.
+<br>
+
+⚠️ Please, do not do that during the training session.
 
 
 ## 🚀 Hands-on
@@ -603,7 +605,7 @@ Please, do not do that during the training session.
 
 In the sequel, we will use [NtSeq](https://github.com/keithwhor/NtSeq), a
 library to manipulate sequences. Let's add a `readSequence()` function that
-returns a `Seq` instance from a sequence string:
+returns a `Seq` instance given a sequence string:
 
 ```js
 const seq = readSequence('ATCG');

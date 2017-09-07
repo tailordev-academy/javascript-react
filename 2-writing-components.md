@@ -212,7 +212,7 @@ removed.
 <br>
 
 Documentation: [Lists and
-Keys](https://facebook.github.io/react/docs/lists-and-keys.html).
+Keys](https://facebook.github.io/react/docs/lists-and-keys.html)
 
 
 #### Example
@@ -238,7 +238,7 @@ ReactDOM.render(<List />, document.querySelector('#app'));
 ### Lifecycle methods
 
 Each component has several "lifecycle methods" that you can override to run code
-at particular times in the process.
+at particular times in the process:
 
 - Mounting: when an instance of a component is being created and inserted into
 the DOM
@@ -360,7 +360,7 @@ export default Header;
 ```
 
 
-### Solution 2.1 (Use of the component)
+### Solution 2.1 (Usage)
 
 ``` javascript
 class App extends Component {
@@ -489,7 +489,7 @@ you receive is valid.
 <br>
 
 Documentation: [Typechecking With
-PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html).
+PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
 
 
 #### PropTypes on class-based components
@@ -660,7 +660,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ### Exercise 2.5
 
-1. Require the `seq-utils` module created previously
+1. Require the `seq-utils` module created previously:
 
     ```bash
     $ yarn add file:../seq-utils/seq-utils-1.0.0.tgz
@@ -684,7 +684,7 @@ meaning of `this`.
 <br>
 
 Documentation: [Handling
-Events](https://facebook.github.io/react/docs/handling-events.html).
+Events](https://facebook.github.io/react/docs/handling-events.html)
 
 
 ### Example
@@ -723,8 +723,8 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 ### Alternative/Better syntax
 
 Using [Babel `transform-class-properties`
-plugin](https://babeljs.io/docs/plugins/transform-class-properties/), enabled on
-Create React App:
+plugin](https://babeljs.io/docs/plugins/transform-class-properties/):
+(enabled on Create React App)
 
 ``` javascript.player.web
 import React, { Component } from 'react';
@@ -761,7 +761,7 @@ How to get user's input data with React?
 
 <br>
 
-Documentation: [Forms](https://facebook.github.io/react/docs/forms.html).
+Documentation: [Forms](https://facebook.github.io/react/docs/forms.html)
 
 
 ### Controlled components
@@ -815,7 +815,7 @@ rarely useful.
 <br>
 
 Documentation: [Uncontrolled
-components](https://facebook.github.io/react/docs/uncontrolled-components.html).
+components](https://facebook.github.io/react/docs/uncontrolled-components.html)
 
 
 ## 🚀 Hands-on
@@ -958,7 +958,7 @@ $ yarn add --dev react-test-renderer
 <br>
 
 Documentation: [Snapshot
-testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html).
+testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html)
 
 
 #### Example of a snapshot test
@@ -1025,7 +1025,7 @@ $ yarn add enzyme jest-enzyme --dev
 
 <br>
 
-Documentation: http://airbnb.io/enzyme/.
+Documentation: http://airbnb.io/enzyme/
 
 
 #### Enzyme API

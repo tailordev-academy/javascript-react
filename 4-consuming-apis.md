@@ -58,7 +58,7 @@ and the moment reducers are reached.
 <br>
 
 Documentation: [Redux
-Middleware](http://redux.js.org/docs/advanced/Middleware.html).
+Middleware](http://redux.js.org/docs/advanced/Middleware.html)
 
 
 ### Redux Thunk
