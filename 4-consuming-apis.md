@@ -4,6 +4,7 @@
 
 - learn how to talk to an API
 - get familiar with more libraries
+- learn the basics of client-side routing
 
 
 ## Fetch and HTTP
@@ -269,7 +270,12 @@ ReactDOM.render(
 ### Exercise 4.4
 
 1. Create a new `About` component with some content
-2. Add `react-router-dom` and configure the routing into your application
-3. Rename the `App` component to `Home`
-4. Add a `NotFound` component to catch `404` (routing) errors
-5. Move your routing code (inside `Router`) into a `src/Seqbook.js` file
+2. Add `react-router-dom` and configure the routing into your application (you
+   will have to update the `Header` component too)
+3. Add a `NotFound` component to catch `404` errors
+
+
+### Exercise 4.5
+
+1. Rename the `App` component to `Home`
+2. Move your routing code (inside `Router`) into a `src/Seqbook.js` file
