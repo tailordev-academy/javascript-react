@@ -475,7 +475,7 @@ $ npm test
 
 ``` js
 // index.test.js
-import { generate } from './index;
+import { generate } from './index';
 
 test('it generates sequences', () => {
   const seq = generate();
