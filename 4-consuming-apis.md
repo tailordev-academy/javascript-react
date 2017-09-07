@@ -157,6 +157,8 @@ Middleware enhances the store at the `dispatch()` level.
 ## 🚀 Hands-on
 
 
+### The Plot
+
 Ensembl is a project to automate the annotation of the human genome. They expose
 a [REST(-ish) API](http://rest.ensembl.org/). Given a "Ensembl stable ID", it is
 possible to retrieve a sequence.
