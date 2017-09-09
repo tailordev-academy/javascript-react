@@ -5,6 +5,7 @@
   <h1>Great user interfaces with React</h1>
 </div>
 
+<p align="center"><img src="./images/seqbook.png"></p>
 
 ## Table of Contents
 
