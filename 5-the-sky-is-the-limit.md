@@ -15,6 +15,86 @@
 ## More on testing
 
 
+### `redux-thunk` & `fetch`
+
+In order to test `redux-thunk` and API calls with `fetch` (without having to
+actually call the API), we need:
+
+- A [mock store](http://arnaudbenard.com/redux-mock-store/) for your testing
+  your redux async action creators and middleware
+- A way to [mock HTTP requests](http://www.wheresrhys.co.uk/fetch-mock/) made
+  using `fetch`
+
+<br>
+
+``` bash
+$ yarn add --dev redux-mock-store fetch-mock
+```
+
+
+#### `redux-mock-store`
+
+``` js
+import configureStore from 'redux-mock-store';
+
+const addTodo = () => ({ type: 'ADD_TODO' });
+
+it('should dispatch action', () => {
+  const mockStore = configureStore([/* middleware */]);
+  const initialState = {};
+  const store = mockStore(initialState);
+
+  store.dispatch(addTodo());
+
+  expect(store.getActions()).toEqual([
+    { type: 'ADD_TODO' },
+  ]);
+});
+```
+
+
+#### `fetch-mock`
+
+``` js
+describe('reducer', () => {
+  beforeEach(() => { fetchMock.reset(); });
+  afterEach(() => { fetchMock.restore(); });
+
+  it('fetches a sequence on the API', () => {
+    // create store with `redux-mock-store`
+    // create `expectedActions` variable
+
+    fetchMock.get('*', { id: 'SEQ_ID', ... });
+
+    // `fetchSequence()` must return a Promise
+    return store.dispatch(fetchSequence('SEQ_ID'))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+});
+```
+
+
+### Hidden Jest features
+
+```js
+// Adding `.only` to `describe`, `it`, or `test` will only run
+// this test.
+it.only('tests something', () => {
+  expect(returnTrue()).toEqual(true);
+});
+```
+
+```js
+// Adding `.skip` to `describe`, `it`, or `test` will skip
+// this test.
+it.skip('tests something', () => {
+  expect(returnTrue()).toEqual(true);
+});
+```
+
+
 ## Server-Side Rendering (SSR)
 
 Handle the initial render when a user first requests our app. When the
