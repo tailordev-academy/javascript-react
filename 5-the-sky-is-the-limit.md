@@ -112,6 +112,9 @@ $ yarn add --dev flow-coverage-report
 
 ## Performance optimization
 
+More information at: [Optimizing React Apps in
+Practice](https://marmelab.com/blog/2017/02/06/react-is-slow-react-is-fast.html)
+
 
 ## More on testing
 
