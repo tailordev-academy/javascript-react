@@ -205,9 +205,9 @@ yet)
 ## Routing
 
 On the server, routing refers to determining how an application responds to a
-client request to a particular.
+particular client request.
 
-On the client, it is similar: deciding which views to display according to the
+On the client, it is similar: deciding which "view" to display according to the
 URL browsed by the user.
 
 
