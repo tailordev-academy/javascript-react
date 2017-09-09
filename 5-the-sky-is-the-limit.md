@@ -6,7 +6,108 @@
 - hear about advanced concepts
 
 
+## Code formatting
+
+[Prettier](https://github.com/prettier/prettier) is an opinionated code
+formatter. Install it, run it, and do not worry about code formatting anymore.
+
+``` bash
+$ yarn add prettier --dev
+```
+
+<br>
+
+Add a `prettier` script to your `package.json`:
+
+``` bash
+$ prettier --single-quote --trailing-comma es5 --write 'src/**/*.js'
+```
+
+
 ## Flow types
+
+Flow is a static type checker for your JavaScript code. It does a lot of work to
+make you more productive. Making you code faster, smarter, and more confidently!
+
+<br>
+
+``` bash
+$ yarn add --dev flow-bin
+$ yarn run flow init
+```
+
+Documentation: https://flow.org/
+
+
+### On class-based components
+
+Flow replaces the `PropTypes` in React components:
+
+``` js
+/* @flow */
+import React from 'react';
+
+type Props = {|
+  onFetch: Function,
+  isFetching: boolean,
+|};
+
+type State = {|
+  search: string,
+|};
+
+class EnsemblSearch extends React.Component<Props, State> {
+  constructor(props: Props) {}
+  // ...
+}
+```
+
+
+### On functional components
+
+``` js
+/* @flow */
+import React from 'react';
+
+type Props = {|
+  title: string,
+  onSelect: Function,
+|};
+
+const Item = ({ title, onSelect }: Props) => (/* ... */);
+```
+
+
+### Library Definition
+
+Add support for third-party libraries (see also
+[flow-typed](https://github.com/flowtype/flow-typed)):
+
+``` js
+// flow-typed/seq-utils.js
+
+export type NtSeq = {|
+  complement: () => NtSeq,
+  contentATGC: () => {| [string]: number |},
+  fractionalContentATGC: () => {| [string]: number |},
+  sequence: () => string,
+  size: () => number,
+|};
+
+declare module "seq-utils" {
+  declare export function generate(): NtSeq;
+  declare export function readSequence(sequence: string): NtSeq;
+}
+```
+
+
+### Flow coverage
+
+``` bash
+$ yarn add --dev flow-coverage-report
+```
+
+![](images/flow-coverage-report.png)
 
 
 ## Performance optimization
