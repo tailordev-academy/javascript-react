@@ -448,6 +448,44 @@ state. They are composable and they can be used as input to other selectors.
 See also: the [reselect](https://github.com/reactjs/reselect) library.
 
 
+### The problem
+
+```js
+const mapStateToProps = (state) => {
+  return {
+    incompleteItems: state.listOfItems.filter((item) => {
+      return !item.completed;
+    });
+  };
+};
+```
+
+- Implementation of `incompleteItems` may change
+- Computation logic occurs in `mapStateToProps()`
+- Cannot memoize the values of `incompleteItems`
+
+
+### The solution
+
+Introduce selectors into your reducers:
+
+```js
+const getIncompleteItems = (state) => {
+  return state.listOfItems.filter((item) => {
+    return !item.completed;
+  });
+};
+```
+
+```js
+const mapStateToProps = (state) => {
+  return {
+    incompleteItems: getIncompleteItems(state),
+  };
+};
+```
+
+
 ## 🚀 Hands-on
 
 
