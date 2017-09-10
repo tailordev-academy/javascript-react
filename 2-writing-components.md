@@ -75,7 +75,7 @@ JSX](https://jasonformat.com/wtf-is-jsx/).
 ### Example please
 
 ``` javascript.player.transpiler
-const simpleElement = <div />
+const simpleElement = <div />;
 
 const complexElement = (
   <div
@@ -84,7 +84,7 @@ const complexElement = (
   >
     <p>42</p>
   </div>
-)
+);
 ```
 
 
@@ -177,6 +177,11 @@ ReactDOM.render(<Item />, document.querySelector('#app'));
 ```
 
 
+### React component tree
+
+![An example of a React component tree](images/react-tree.png)
+
+
 ### Composition
 
 ``` javascript.player.web
@@ -206,7 +211,7 @@ https://fb.me/react-warning-keys for more information.
 ```
 
 A "key" is a special string attribute you need to include when creating lists of
-elements. Keys help React identify which items have changed, are added, or are
+elements. Keys help React identify which items have changed, are added or are
 removed.
 
 <br>
@@ -232,57 +237,6 @@ const List = () => (
 );
 
 ReactDOM.render(<List />, document.querySelector('#app'));
-```
-
-
-### Lifecycle methods
-
-Each component has several "lifecycle methods" that you can override to run code
-at particular times in the process:
-
-- Mounting: when an instance of a component is being created and inserted into
-the DOM
-- Updating: when a component is being re-rendered, triggered by changes to props
-  or state
-- Unmounting: when a component is being removed from the DOM
-
-
-![React lifecycle methods](images/lifecycle-methods.png)
-
-
-### CSS classes
-
-Every React component has a `className` special attribute to add CSS classes to
-it. You cannot use `class`:
-
-```js
-const Component = (props) => (
-  <div className="Component">
-    // ...
-  </div>
-);
-```
-
-It is advised to use the same `className` as the component name but you can do
-whatever you like.
-
-
-#### `classnames`
-
-The [classnames](https://github.com/JedWatson/classnames) library is very useful
-to deal with different CSS class names in JavaScript:
-
-``` js
-import classNames from 'classnames';
-
-classNames('foo', 'bar');
-// => 'foo bar'
-
-classNames('foo', { bar: true });
-// => 'foo bar'
-
-classNames('foo', { bar: false });
-// => 'foo'
 ```
 
 
@@ -429,9 +383,11 @@ $ echo 'NODE_PATH=src/' > .env
 
 **Props** are **read-only** arbitrary inputs.
 
+![](images/props.png)
+
 All React components must act like pure functions with respect to their props.
-"Pure" functions are called "pure" because they do not attempt to change their
-inputs, and always return the same result for the same inputs.
+"Pure" functions do not attempt to change their inputs and always return the
+same results for the same inputs.
 
 
 ### Props & class component
@@ -670,13 +626,30 @@ ReactDOM.render(<App />, document.querySelector('#app'));
    sequences
 
 
+## Props vs State
+
+Props are chunks of app state that are passed into your component from a parent
+component.
+
+State is something that changes within a component, which could be used as
+props for its children.
+
+Yet, both are plain JS objects, deterministic and trigger a render update when
+they change.
+
+<br>
+
+Further explanation: [Props vs
+State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
+
+
 ## Receiving user's events
 
 
 ### Events
 
-Most components have function props to handle events. Events are camelCased and
-you have to pass functions as event handlers.
+Most components have function props to handle events. Events are "camelCased"
+and you have to pass functions as event handlers.
 
 When passing functions in JSX callbacks, you have to be careful about the
 meaning of `this`.
@@ -722,9 +695,9 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ### Alternative/Better syntax
 
-Using [Babel `transform-class-properties`
-plugin](https://babeljs.io/docs/plugins/transform-class-properties/):
-(enabled on Create React App)
+Using the [Babel `transform-class-properties`
+plugin](https://babeljs.io/docs/plugins/transform-class-properties/)
+(enabled on Create React App).
 
 ``` javascript.player.web
 import React, { Component } from 'react';
@@ -767,7 +740,7 @@ Documentation: [Forms](https://facebook.github.io/react/docs/forms.html)
 ### Controlled components
 
 In HTML, form elements (`input`, `textarea`, etc.) maintain their own state. In
-React, we usually keep state in the component. A controlled components is a form
+React, we usually keep state in the component. A controlled component is a form
 element whose value is controlled by React.
 
 
@@ -854,23 +827,6 @@ components](https://facebook.github.io/react/docs/uncontrolled-components.html)
 ![Checkpoint #1](images/seqbook-checkpoint-1.png)
 
 
-## Props vs State
-
-Props are chunks of app state that are passed into your component from a parent
-component.
-
-State is something which changes within a component, which could be used as
-props for it's children.
-
-Yet, both are plain JS objects, deterministic and trigger a render update when
-they change.
-
-<br>
-
-Further explanation: [Props vs
-State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md).
-
-
 ##  Divide & Conquer
 
 - Decompose your UI into different main components (_e.g._, `Header`, `Footer`)
@@ -937,7 +893,79 @@ Create a new `Card` next to the `Length` one to display the result of
 ![Checkpoint #3](images/seqbook-checkpoint-3.png)
 
 
-## Unit testing / Snapshots
+## Advanced concepts
+
+
+### Lifecycle methods
+
+Each component has several **lifecycle methods** that you can override to run
+code at particular times in the process:
+
+- Mounting: when an instance of a component is being created and inserted into
+the DOM
+- Updating: when a component is being re-rendered, triggered by changes to props
+  or state
+- Unmounting: when a component is being removed from the DOM
+
+
+![React lifecycle methods](images/lifecycle-methods.png)
+
+
+### Lifting state up
+
+There should be a single **source of truth** for any data that changes in a
+React application.
+
+Most of the time, several components need to reflect the same changing data.
+Instead of duplicating the data, lift the shared state up to the closest common
+ancestor.
+
+
+#### Example
+
+![](images/lifting-state-up.png)
+
+`C` and `D` share the same data via "root" as the common ancestor. This
+introduces **coupling** but Redux solves it.
+
+
+### CSS classes
+
+Every React component has a special `className` attribute to add CSS classes to
+it, you cannot use `class`.
+
+```js
+const Component = (props) => (
+  <div className="Component">
+    // ...
+  </div>
+);
+```
+
+It is advised to use the same `className` as the component name but you can do
+whatever you like.
+
+
+#### `classnames`
+
+The [classnames](https://github.com/JedWatson/classnames) library is very useful
+to deal with different CSS class names in JavaScript:
+
+``` js
+import classNames from 'classnames';
+
+classNames('foo', 'bar');
+// => 'foo bar'
+
+classNames('foo', { bar: true });
+// => 'foo bar'
+
+classNames('foo', { bar: false });
+// => 'foo'
+```
+
+
+## Unit testing/Snapshots
 
 Create React App bundles [Jest](https://facebook.github.io/jest/) and you can
 run the test suite with `yarn test` (calling `jest` directly won't work).
@@ -999,7 +1027,7 @@ exports[`renders correctly 1`] = `
 
 #### Updating reference files
 
-If you modify your component, snapshot tests will not pass. You should update
+If you modify your component, snapshot tests will not pass. You have to update
 the snapshot reference files:
 
 ```bash
@@ -1132,25 +1160,3 @@ Data for the chart can be retrieved by calling `fractionalContentATGC()` on a
 ### Checkpoint #5
 
 ![Checkpoint #5](images/seqbook-checkpoint-5.png)
-
-
-## Additional information
-
-
-### Lifting state up
-
-There should be a single "source of truth" for any data that changes in a React
-application.
-
-Most of the time, several components need to reflect the same changing data.
-Instead of duplicating the data, lift the shared state up to the closest common
-ancestor.
-
-
-### Converting a function to a class
-
-1. Create an ES6 class with the same name that extends `React.Component`
-2. Add a single empty method to it called `render()`
-3. Move the body of the function into the `render()` method
-4. Replace `props` with `this.props` in the `render()` body
-5. Delete the remaining empty function declaration

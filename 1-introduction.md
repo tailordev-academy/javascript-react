@@ -26,7 +26,7 @@ Documentation: https://facebook.github.io/react/
 Documentation: https://facebook.github.io/flux/
 
 
-## What is Flux?
+## What is Redux?
 
 [Redux](http://redux.js.org/) is *one* (partial) implementation of the Flux
 pattern. It is now the reference and works well with React.
@@ -89,9 +89,9 @@ if (true) {
 #### Arrow functions
 
 ``` javascript.player.transpiler
-const foo = () => 'bar'
+const foo = () => 'bar';
 
-this.items.map(x => this.doSomethingWith(x))
+this.items.map(x => this.doSomethingWith(x));
 
 const odds = evens.map(v => v + 1);
 const pairs = evens.map(
@@ -129,9 +129,9 @@ function foo({ x }) {
 assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 
-#### Imports / Exports
+#### Imports/Exports
 
-- One default export per file
+- One **default** export per file
 - Every other import and export must be named
 
 
@@ -218,23 +218,23 @@ sayHello(null);
 ``` javascript.player.console
 class Calculator {
   constructor(value1, value2) {
-    this.value1 = value1
-    this.value2 = value2
+    this.value1 = value1;
+    this.value2 = value2;
   }
 
   static multiply(value1, value2) {
-    return value1 * value2
+    return value1 * value2;
   }
 
   sum() {
-    return this.value1 + this.value2
+    return this.value1 + this.value2;
   }
 }
 
-const calc = new Calculator(2, 3)
+const calc = new Calculator(2, 3);
 
-console.log(calc.sum())
-console.log(Calculator.multiply(2, 3))
+console.log(calc.sum());
+console.log(Calculator.multiply(2, 3));
 ```
 
 
@@ -284,20 +284,20 @@ console.log(Foo.bar);
 const defaultStyle = {
   color: 'black',
   fontSize: 12,
-  fontWeight: 'normal'
+  fontWeight: 'normal',
 };
 
 const style = {
   ...defaultStyle,
   fontWeight: 'bold',
-  backgroundColor: 'white'
+  backgroundColor: 'white',
 };
 
 console.log(style);
 ```
 
 
-#### Async / Await
+#### Async/Await
 
 The purpose of `async`/`await` functions is to simplify the behavior of using
 promises synchronously.
@@ -317,7 +317,7 @@ const printJSON = (endpoint) => {
 ```
 
 
-##### Example
+#### Async/Await – Example
 
 ``` js
 const printJSON = async (endpoint) => {
@@ -352,10 +352,10 @@ $ git init
 In a `index.js` file, write a `generate()` function to randomly generate DNA
 sequences. This function must be written in ES2015 and exported.
 
-A sequence has a unique identifier (`id`), a `name` and the `sequence` itself,
+A sequence has a unique identifier `id`, a `name` and the `sequence` itself,
 compound of letters (_nucleotides_):
 
-```
+```js
 {
   id: 123456,
   name: 'name of the sequence',
@@ -378,7 +378,7 @@ export const generate = () => {
   }
 
   return {
-    id: `WD${new Date().getTime()}${length}`,
+    id: `TD${new Date().getTime()}${length}`,
     name: `Sequence ${length}`,
     sequence: s.join(''),
   };
@@ -455,7 +455,7 @@ Ran all test suites.
 
 Edit `package.json` to update the `test` script entry:
 
-``` js
+``` json
 "scripts": {
   "test": "jest"
 }
@@ -514,7 +514,7 @@ Documentation: https://babeljs.io/
 ### NPM scripts
 
 NPM scripts are custom scripts that can be run with `npm run`. It is similar to
-`Makefile` targets, except that it is bundled in the `package.json` file:
+`Makefile` targets, except that they are bundled in the `package.json` file:
 
 ``` js
 "scripts": {
