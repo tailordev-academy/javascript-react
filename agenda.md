@@ -6,6 +6,7 @@
 - Introduction
   - What is React?
   - What is Flux?
+  - What is Redux?
   - Modern JavaScript
   - Unit testing
   - Transpilation with Babel
@@ -17,12 +18,12 @@
 - Writing components
   - The JSX syntax
   - About imports
-  - Dealing with data (props / state)
+  - Dealing with data (props/state)
   - Receiving user's events
   - Forms
   - Divide and conquer
-  - Unit testing / snapshots
-  - Additional information
+  - Advanced concepts
+  - Unit testing/Snapshots
 
 
 ## Agenda // Day 2
@@ -32,7 +33,7 @@
   - Writing reducers, action creators and actions
   - Ducks!
   - Connecting React and Redux
-  - (Redux) dev tools
+  - (Redux) Dev Tools
   - Unit testing
   - Refactoring with selectors
 
@@ -48,6 +49,7 @@
 ## Agenda // Day 2+
 
 - The sky is the limit!
+  - Code formatting
   - Flow types
   - Performance optimization
   - More on testing

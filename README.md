@@ -12,7 +12,7 @@
 - [Introduction](1-introduction.md#introduction)
   - [What is React?](1-introduction.md#what-is-react)
   - [What is Flux?](1-introduction.md#what-is-flux)
-  - [What is Flux?](1-introduction.md#what-is-flux-1)
+  - [What is Redux?](1-introduction.md#what-is-redux)
   - [Modern JavaScript](1-introduction.md#modern-javascript)
     - [ES5](1-introduction.md#es5)
     - [ES2015 (ES6)](1-introduction.md#es2015-es6)
