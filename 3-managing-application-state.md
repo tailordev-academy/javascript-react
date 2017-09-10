@@ -9,7 +9,7 @@
 
 ## What is Redux?
 
-Redux is a predictable state container for JavaScript apps. It can be used
+Redux is a predictable **state container** for JavaScript apps. It can be used
 without React and React does not require it.
 
 Yet, it helps build flexible and maintainable applications.
@@ -233,8 +233,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 ### Presentational vs Container Components
 
-Containers know about data, it's shape and where it comes from. We also call
-them "connected" components.
+Containers know about data, its shape and where it comes from. We also call them
+"connected" components.
 
 Presentational components are concerned with how the things look, with no
 internal state (functional components).

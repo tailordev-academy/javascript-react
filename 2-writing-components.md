@@ -17,7 +17,7 @@ Create React apps with no build configuration:
 - Great default settings
 - Eject mode
 
-```
+``` bash
 $ npm install -g create-react-app
 ```
 
@@ -979,7 +979,7 @@ reference.
 
 <br>
 
-```bash
+``` bash
 $ yarn add --dev react-test-renderer
 ```
 
@@ -1120,7 +1120,7 @@ always generated).
 
 ### Exercise 2.13
 
-1. Add snapshot tests  for the following components: `Card`, `Item`, `Length`
+1. Add snapshot tests  for the following components: `Card`, `Item` and `Length`
 2. Add tests with `shallow()` and `mount()` for the `List` component
 3. Try to improve the overall code coverage (if time allows)
 

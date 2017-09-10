@@ -186,7 +186,7 @@ literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Temp
 Tags allow you to parse template literals with a function. Have a look at the
 [common-tags](https://github.com/declandewet/common-tags) library for examples:
 
-```js
+``` js
 import { oneLine } from 'common-tags';
 
 oneLine`
@@ -355,7 +355,7 @@ sequences. This function must be written in ES2015 and exported.
 A sequence has a unique identifier `id`, a `name` and the `sequence` itself,
 compound of letters (_nucleotides_):
 
-```js
+``` js
 {
   id: 123456,
   name: 'name of the sequence',
@@ -607,7 +607,7 @@ In the sequel, we will use [NtSeq](https://github.com/keithwhor/NtSeq), a
 library to manipulate sequences. Let's add a `readSequence()` function that
 returns a `Seq` instance given a sequence string:
 
-```js
+``` js
 const seq = readSequence('ATCG');
 ```
 
@@ -632,10 +632,10 @@ Tests:       2 passed, 2 total
 Snapshots:   0 total
 Time:        0.795s, estimated 1s
 Ran all test suites.
-----------|----------|----------|----------|----------|----------------|
-File      |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
-----------|----------|----------|----------|----------|----------------|
-All files |      100 |      100 |      100 |      100 |                |
- index.js |      100 |      100 |      100 |      100 |                |
-----------|----------|----------|----------|----------|----------------|
+----------|---------|----------|---------|---------|----------------|
+File      | % Stmts | % Branch | % Funcs | % Lines |Uncovered Lines |
+----------|---------|----------|---------|---------|----------------|
+All files |     100 |      100 |     100 |     100 |                |
+ index.js |     100 |      100 |     100 |     100 |                |
+----------|---------|----------|---------|---------|----------------|
 ```
