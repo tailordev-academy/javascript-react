@@ -575,7 +575,6 @@ package/package.json
 package/.npmignore
 package/.babelrc
 package/dist/index.js
-package/seq-utils-1.0.0.tgz
 ```
 
 
@@ -619,7 +618,7 @@ const seq = readSequence('ATCG');
 ## Code coverage
 
 ``` bash
-$ jest --coverage
+$ ./node_modules/.bin/jest --coverage
 ```
 
 ``` bash

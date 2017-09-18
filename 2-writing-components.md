@@ -274,7 +274,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
     $ git rm src/*.css src/*.svg
     ```
 
-2. Remove corresponding `import` (see `yarn` output)
+2. Remove corresponding `import` (see `yarn start` output)
 3. Add Bootstrap CSS:
 
     ``` bash
@@ -857,7 +857,8 @@ Let's have fun with React components!
 ### Exercise 2.10
 
 1. Create a `Length` component (in `src/widgets/`) that renders a `Card`
-   displaying the length of the sequence (`PropTypes.string`)
+   displaying the length of the sequence (`PropTypes.string`). You can use
+   Bootstrap Panel CSS style
 2. Add it to your `SequenceView` component
 
 
