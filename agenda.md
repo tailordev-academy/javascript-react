@@ -13,7 +13,7 @@
   - Code coverage
 
 
-## Agenda // Day 1
+## Agenda // Day 1-2
 
 - Writing components
   - The JSX syntax
@@ -38,7 +38,7 @@
   - Refactoring with selectors
 
 
-## Agenda // Day 2
+## Agenda // Day 2-3
 
 - Consuming APIs
   - Fetch and HTTP
@@ -46,7 +46,7 @@
   - Routing
 
 
-## Agenda // Day 2+
+## Agenda // Day 3+
 
 - The sky is the limit!
   - Code formatting
