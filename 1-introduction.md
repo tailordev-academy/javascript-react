@@ -503,7 +503,7 @@ $ npm i --save-dev babel-cli
 ```
 
 ``` bash
-$ babel index.js --out-dir dist/
+$ ./node_modules/.bin/babel index.js --out-dir dist/
 index.js -> dist/index.js
 ```
 
@@ -548,7 +548,8 @@ $ npm run build
 3. Create a `.gitignore` file:
 
   ``` bash
-  $ echo "node_modules/\ndist/" > .gitignore
+  $ echo 'node_modules/' >> .gitignore
+  $ echo 'dist/' >> .gitignore
   ```
 
 
