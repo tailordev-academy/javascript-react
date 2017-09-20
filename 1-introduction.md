@@ -427,7 +427,7 @@ $ jest
   ● Test suite failed to run
 
     /path/to/react/seq-utils/index.test.js:2
-    import { generate } from './index;
+    import { generate } from './index';
     ^^^^^^
 
     ...
