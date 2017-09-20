@@ -399,7 +399,7 @@ $ npm install jest --save-dev
 ```
 
 ``` bash
-$ jest
+$ ./node_modules/.bin/jest
 No tests found
 ```
 
