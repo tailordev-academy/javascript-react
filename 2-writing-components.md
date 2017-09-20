@@ -132,7 +132,7 @@ export default Item;
 #### Example
 
 ``` javascript.player.web
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Item extends React.Component {
@@ -168,7 +168,7 @@ export default Item;
 #### Example
 
 ``` javascript.player.web
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Item = () => <li>42</li>;
@@ -185,7 +185,7 @@ ReactDOM.render(<Item />, document.querySelector('#app'));
 ### Composition
 
 ``` javascript.player.web
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Item = () => <li>42</li>;
@@ -223,7 +223,7 @@ Keys](https://facebook.github.io/react/docs/lists-and-keys.html)
 #### Example
 
 ``` javascript.player.web
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Item = () => <li>42</li>;
@@ -585,7 +585,7 @@ yourself.
 ### Example
 
 ``` javascript.player.web
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 class App extends React.Component {
@@ -663,7 +663,7 @@ Events](https://facebook.github.io/react/docs/handling-events.html)
 ### Example
 
 ``` javascript.player.web
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 class App extends React.Component {
@@ -700,7 +700,7 @@ plugin](https://babeljs.io/docs/plugins/transform-class-properties/)
 (enabled on Create React App).
 
 ``` javascript.player.web
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 class App extends React.Component {
@@ -747,7 +747,7 @@ element whose value is controlled by React.
 #### Example
 
 ``` javascript.player.web
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Search extends React.Component {
