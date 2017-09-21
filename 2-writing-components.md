@@ -540,7 +540,7 @@ export default Item;
 
 ### Exercise 2.3
 
-1. Add the `List` component to the `App` component in a `col-md-4` panel (add a
+1. Add the `List` component to the `App` component in a `col-md-4` column (add a
    fluid container and a row too)
 2. Add a `src/styles.css` file for the body padding (due to Bootstrap navbar)
 
@@ -797,8 +797,7 @@ components](https://facebook.github.io/react/docs/uncontrolled-components.html)
 ### Exercise 2.6
 
 1. Add a button below the `List` to add new (random) sequences to it
-2. Allow to select a list item and display its information on the right panel
-   (you have to create this panel too)
+2. Allow to select a list item and display its information on the right side
 
 
 ### Exercise 2.7
@@ -819,7 +818,7 @@ components](https://facebook.github.io/react/docs/uncontrolled-components.html)
     }
     ```
 
-3. Use it in your right panel
+3. Use it on the right side of the interface
 
 
 ### Checkpoint #1
@@ -857,8 +856,7 @@ Let's have fun with React components!
 ### Exercise 2.10
 
 1. Create a `Length` component (in `src/widgets/`) that renders a `Card`
-   displaying the length of the sequence (`PropTypes.string`). You can use
-   Bootstrap Panel CSS style
+   displaying the length of the sequence (`PropTypes.string`)
 2. Add it to your `SequenceView` component
 
 
