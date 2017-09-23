@@ -44,7 +44,7 @@
 .reveal h1 .fa,
 .reveal h2 .fa,
 .reveal h3 .fa {
-  color: #1abc9c;
+  color: #2e354f;
 }
 
 /*********************************************
@@ -186,7 +186,7 @@
  * LINKS
  *********************************************/
 .reveal a {
-  color: #1abc9c;
+  color: #2e354f;
   text-decoration: none;
   border-bottom: none !important;
   -webkit-transition: color .15s ease;
@@ -194,13 +194,9 @@
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #2e354f;
+  color: #101423;
   text-shadow: none;
   border: none; }
-
-.reveal .roll span:after {
-  color: #fff;
-  background: #1a53a1; }
 
 /*********************************************
  * IMAGES
@@ -208,7 +204,7 @@
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 2px solid #1ABC9C;
+  border: 2px solid #2e354f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal section img.plain {
@@ -222,7 +218,7 @@
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #1abc9c;
+  border-color: #2e354f;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -230,31 +226,31 @@
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #1abc9c; }
+  border-right-color: #2e354f; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #1abc9c; }
+  border-left-color: #2e354f; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #1abc9c; }
+  border-bottom-color: #2e354f; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #1abc9c; }
+  border-top-color: #2e354f; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #2e354f; }
+  border-right-color: #101423; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #2e354f; }
+  border-left-color: #101423; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #2e354f; }
+  border-bottom-color: #101423; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #2e354f; }
+  border-top-color: #101423; }
 
 /*********************************************
  * PROGRESS BAR
@@ -263,13 +259,13 @@
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #1abc9c;
+  background: #2e354f;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
 /**
- * Monod customization
+ * TD Academy customization
  */
 .reveal .no-border img {
   border: 0 !important;
@@ -283,4 +279,8 @@
 
 .reveal input[type="checkbox"] {
   zoom: 2;
+}
+
+.slide-background.hands-on {
+  background: #00c6ff;
 }

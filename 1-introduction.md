@@ -336,6 +336,7 @@ const printJSON = async (endpoint) => {
 Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 Let's start by creating a new project:
@@ -347,6 +348,7 @@ $ git init
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 1.1
 
 In a `index.js` file, write a `generate()` function to randomly generate DNA
@@ -364,6 +366,7 @@ compound of letters (_nucleotides_):
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ### Solution 1.1
 
 ``` js
@@ -466,15 +469,18 @@ $ npm test
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 1.2
 
 1. Install the testing dependencies in your project
 2. Write a unit test for your `generate()` function
 
 
+<!-- .slide: class="hands-on" -->
 ### Solution 1.2
 
 ``` js
@@ -593,14 +599,17 @@ $ npm publish ./
 ⚠️ Please, do not do that during the training session.
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 1.3
 
 1. Create a NPM module
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 1.4
 
 In the sequel, we will use [NtSeq](https://github.com/keithwhor/NtSeq), a

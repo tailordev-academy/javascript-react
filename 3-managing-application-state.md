@@ -329,9 +329,11 @@ if (isNotProduction) {
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 3.1
 
 1. Install Redux, React Redux and configure it into your application (install
@@ -486,9 +488,11 @@ const mapStateToProps = (state) => {
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 3.2
 
 1. Add unit tests for the `app` reducer (`app.test.js`)

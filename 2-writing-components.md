@@ -22,6 +22,7 @@ $ npm install -g create-react-app
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 1. Install `yarn`: https://yarnpkg.com/lang/en/docs/install/
@@ -266,6 +267,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 1. Remove a few useless files:
@@ -288,12 +290,14 @@ ReactDOM.render(<App />, document.querySelector('#app'));
     ```
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.1
 
 1. Create a `Header` component with a Bootstrap **navbar** (brand image)
 2. Import and use it in the existing `App` component
 
 
+<!-- .slide: class="hands-on" -->
 ### Solution 2.1 (The component)
 
 ``` javascript
@@ -314,6 +318,7 @@ export default Header;
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ### Solution 2.1 (Usage)
 
 ``` javascript
@@ -481,9 +486,11 @@ Item.propTypes = {
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.2
 
 1. Create a `Item` component rendering a `title` prop
@@ -499,6 +506,7 @@ Item.propTypes = {
 3. Use Bootstrap **list-group** style
 
 
+<!-- .slide: class="hands-on" -->
 ### Solution 2.2 – `List`
 
 ```
@@ -520,6 +528,7 @@ List.propTypes = {
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ### Solution 2.2 – `Item`
 
 ```js
@@ -538,6 +547,7 @@ export default Item;
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.3
 
 1. Add the `List` component to the `App` component in a `col-md-4` column (add a
@@ -545,6 +555,7 @@ export default Item;
 2. Add a `src/styles.css` file for the body padding (due to Bootstrap navbar)
 
 
+<!-- .slide: class="hands-on" -->
 ### Solution 2.3
 
 ```js
@@ -606,14 +617,17 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.4
 
 1. Move the `sequences` list to the `App` component state
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.5
 
 1. Require the `seq-utils` module created previously:
@@ -791,15 +805,18 @@ Documentation: [Uncontrolled
 components](https://facebook.github.io/react/docs/uncontrolled-components.html)
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.6
 
 1. Add a button below the `List` to add new (random) sequences to it
 2. Allow to select a list item and display its information on the right side
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.7
 
 1. Create a `Sequence` component that renders a sequence (`PropTypes.string`):
@@ -833,11 +850,13 @@ components](https://facebook.github.io/react/docs/uncontrolled-components.html)
 - Create small components that are reusable (_e.g._, `Button`, `Card`)
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 Let's have fun with React components!
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.8
 
 1. Create a `Card` component (in `src/ui/`) that can display a title, a value
@@ -845,6 +864,7 @@ Let's have fun with React components!
 2. Use Boostrap `panel` to style this `Card` component
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.9
 
 1. Create a `SequenceView` class-based component that takes a `sequence` object
@@ -853,6 +873,7 @@ Let's have fun with React components!
 2. Use it in your `App.js`
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.10
 
 1. Create a `Length` component (in `src/widgets/`) that renders a `Card`
@@ -865,6 +886,7 @@ Let's have fun with React components!
 ![Checkpoint #2](images/seqbook-checkpoint-2.png)
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.11
 
 Add a new method `getGCContent()` to `SequenceView` that takes the sequence
@@ -881,6 +903,7 @@ const gc = (atgc['G'] + atgc['C']) /
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.12
 
 Create a new `Card` next to the `Length` one to display the result of
@@ -1114,9 +1137,11 @@ You can open `coverage/lcov-report/index.html` to get the HTML report (which is
 always generated).
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.13
 
 1. Add snapshot tests  for the following components: `Card`, `Item` and `Length`
@@ -1124,6 +1149,7 @@ always generated).
 3. Try to improve the overall code coverage (if time allows)
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.14
 
 Create a `Complement` widget that renders a `Sequence` configured with the
@@ -1138,6 +1164,7 @@ and get the sequence as string by calling `sequence()`.
 ![Checkpoint #4](images/seqbook-checkpoint-4.png)
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 2.15
 
 Create a `FractionalContent` widget that renders a pie chart showing the content

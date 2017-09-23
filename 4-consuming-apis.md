@@ -154,9 +154,11 @@ functionality to the store when you call `createStore()`.
 Middleware enhances the store at the `dispatch()` level.
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### The Plot
 
 Ensembl is a project to automate the annotation of the human genome. They expose
@@ -177,11 +179,13 @@ $ http --json http://rest.ensembl.org/sequence/id/ENSG00000274347
 yet)
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 4.1
 
 1. Install `redux-thunk` and `isomorphic-fetch`
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 4.2
 
 1. Create a `EnsemblSearch` component that renders a `form` with a search bar
@@ -197,6 +201,7 @@ yet)
 ![Checkpoint #7](images/seqbook-checkpoint-7.gif)
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 4.3
 
 1. Add `redux-persist` to your project
@@ -266,9 +271,11 @@ ReactDOM.render(
 ```
 
 
+<!-- .slide: class="hands-on" -->
 ## 🚀 Hands-on
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 4.4
 
 1. Create a new `About` component with some content
@@ -277,6 +284,7 @@ ReactDOM.render(
 3. Add a `NotFound` component to catch `404` errors
 
 
+<!-- .slide: class="hands-on" -->
 ### Exercise 4.5
 
 1. Rename the `App` component to `Home`
