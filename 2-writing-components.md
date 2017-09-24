@@ -1152,11 +1152,20 @@ always generated).
 <!-- .slide: class="hands-on" -->
 ### Exercise 2.14
 
-Create a `Complement` widget that renders a `Sequence` configured with the
-complement of a sequence passed to `Complement` as a prop.
+Create a `FractionalContent` widget that renders a pie chart showing the content
+of a sequence, using [Victory](http://formidable.com/open-source/victory/docs).
 
-You can get the complement of a `Seq` instance by calling `complement()` on it,
-and get the sequence as string by calling `sequence()`.
+Data for the chart can be retrieved by calling `fractionalContentATGC()` on a
+`Seq` instance. This method returns a JavaScript hash map:
+
+```js
+{
+  'A': 0.375,
+  'T': 0.375,
+  'G': 0.125,
+  'C': 0.125
+}
+```
 
 
 ### Checkpoint #4
@@ -1167,20 +1176,11 @@ and get the sequence as string by calling `sequence()`.
 <!-- .slide: class="hands-on" -->
 ### Exercise 2.15
 
-Create a `FractionalContent` widget that renders a pie chart showing the content
-of a sequence, using [Victory](http://formidable.com/open-source/victory/docs).
+Create a `Complement` widget that renders a `Sequence` configured with the
+complement of a sequence passed to `Complement` as a prop.
 
-Data for the chart can be retrieved by calling `fractionalContentATGC()` on a
-`Seq` instance, which returns a JavaScript hash map:
-
-```js
-{
-  'A': 0.375,
-  'T': 0.375,
-  'G': 0.125,
-  'C': 0.125
-}
-```
+You can get the complement of a `Seq` instance by calling `complement()` on it,
+and get the sequence as string by calling `sequence()`.
 
 
 ### Checkpoint #5
