@@ -238,6 +238,21 @@ console.log(Calculator.multiply(2, 3));
 ```
 
 
+### Enhanced Object Literals
+
+``` javascript.player.transpiler
+const id = 123;
+const name = 'John Doe';
+
+const user1 = { id, name };
+
+const user2 = { id, name: 'Babar' };
+```
+
+[MDN Object
+literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Object_literals)
+
+
 #### Dynamic object keys
 
 ``` javascript.player.console
