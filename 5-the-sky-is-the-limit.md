@@ -94,9 +94,11 @@ export type NtSeq = {|
   size: () => number,
 |};
 
+type Sequence = {| id: string, name: string, dna: string |};
+
 declare module "seq-utils" {
-  declare export function generate(): NtSeq;
-  declare export function readSequence(sequence: string): NtSeq;
+  declare export function generate(): Sequence;
+  declare export function createSequenceFromDNA(dna: string): NtSeq;
 }
 ```
 
