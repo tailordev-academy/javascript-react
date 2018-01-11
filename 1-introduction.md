@@ -47,6 +47,11 @@ JavaScript language you likely know. `jQuery` used to be a great library back
 then 😅
 
 
+### Map/Filter/Reduce
+
+![Tweet by Steven Luscher about map/filter/reduce](images/map-filter-reduce.png)
+
+
 ### ES2015 (ES6)
 
 Released around 2009, this is likely the most important update to the JavaScript
