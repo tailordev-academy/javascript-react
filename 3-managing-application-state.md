@@ -231,6 +231,25 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
   callback props that you want to inject into the component
 
 
+#### Example
+
+```js
+const mapStateToProps = (state) => {
+  return {
+    sequences: state.app.sequences,
+  };
+};
+```
+
+```js
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAddSequence: () => dispatch(addSequence(generate())),
+  };
+};
+```
+
+
 ### Presentational vs Container Components
 
 Containers know about data, its shape and where it comes from. We also call them
