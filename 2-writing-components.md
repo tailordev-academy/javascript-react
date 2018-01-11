@@ -711,7 +711,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 Using the [Babel `transform-class-properties`
 plugin](https://babeljs.io/docs/plugins/transform-class-properties/)
-(enabled on Create React App).
+(enabled in Create React App).
 
 ``` javascript.player.web
 import React from 'react';
@@ -1074,7 +1074,13 @@ Airbnb.
 $ yarn add enzyme enzyme-adapter-react-16 --dev
 ```
 
-<br>
+``` js
+// src/setupTests.js
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });
+```
 
 Documentation: http://airbnb.io/enzyme/
 
@@ -1096,6 +1102,7 @@ import { shallow } from 'enzyme';
 import { generate } from 'seq-utils';
 
 import List from './index';
+import Item from './Item';
 
 it('renders items', () => {
   const sequences = [ generate(), generate() ];
@@ -1181,7 +1188,7 @@ Create a `Complement` widget that renders a `Sequence` configured with the
 complement of a sequence passed to `Complement` as a prop.
 
 You can get the complement of a `Seq` instance by calling `complement()` on it,
-and get the DNA sequence as string by calling `sequence()`.
+and get the DNA sequence as a string by calling `sequence()`.
 
 
 ### Checkpoint #5
