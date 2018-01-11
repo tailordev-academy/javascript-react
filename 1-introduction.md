@@ -434,6 +434,10 @@ to the tools installed _via_ NPM:
 export PATH="$PATH:./node_modules/.bin"
 ```
 
+``` bash
+$ jest
+```
+
 
 ### Jest 101
 
