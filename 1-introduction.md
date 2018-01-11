@@ -426,6 +426,13 @@ $ ./node_modules/.bin/jest
 No tests found
 ```
 
+You can also put this into your shell config to avoid typing the relative path
+to the tools installed _via_ NPM:
+
+``` bash
+export PATH="$PATH:./node_modules/.bin"
+```
+
 
 ### Jest 101
 
