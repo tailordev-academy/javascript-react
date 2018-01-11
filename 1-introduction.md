@@ -586,8 +586,10 @@ $ npm run build
 3. Create a `.gitignore` file:
 
   ``` bash
-  $ echo 'node_modules/' >> .gitignore
+  $ echo 'coverage/' >> .gitignore
   $ echo 'dist/' >> .gitignore
+  $ echo 'node_modules/' >> .gitignore
+  $ echo '*.tgz' >> .gitignore
   ```
 
 
@@ -644,7 +646,7 @@ $ npm publish ./
 
 In the sequel, we will use [NtSeq](https://github.com/keithwhor/NtSeq), a
 library to manipulate sequences. Let's add a `createSequenceFromDNA()` function
-that returns a `Seq` instance given a DNA sequence string:
+returning a `Seq` instance given a DNA sequence:
 
 ``` js
 const seq = createSequenceFromDNA('ATCG');
