@@ -369,14 +369,14 @@ $ git init
 In a `index.js` file, write a `generate()` function to randomly generate DNA
 sequences. This function must be written in ES2015 and exported.
 
-A sequence has a unique identifier `id`, a `name` and the `sequence` itself,
+A sequence has a unique identifier `id`, a `name` and the `dna` sequence itself,
 compound of letters (_nucleotides_):
 
 ``` js
 {
   id: 123456,
   name: 'name of the sequence',
-  sequence: 'ATCG...'
+  dna: 'ATCG...'
 }
 ```
 
@@ -398,7 +398,7 @@ export const generate = () => {
   return {
     id: `TD${new Date().getTime()}${length}`,
     name: `Sequence ${length}`,
-    sequence: s.join(''),
+    dna: s.join(''),
   };
 };
 ```
@@ -507,7 +507,7 @@ test('it generates sequences', () => {
 
   expect(seq.id).toBeDefined();
   expect(seq.name).toBeDefined();
-  expect(seq.sequence).toBeDefined();
+  expect(seq.dna).toBeDefined();
 });
 ```
 
@@ -628,11 +628,11 @@ $ npm publish ./
 ### Exercise 1.4
 
 In the sequel, we will use [NtSeq](https://github.com/keithwhor/NtSeq), a
-library to manipulate sequences. Let's add a `readSequence()` function that
-returns a `Seq` instance given a sequence string:
+library to manipulate sequences. Let's add a `createSequenceFromDNA()` function
+that returns a `Seq` instance given a DNA sequence string:
 
 ``` js
-const seq = readSequence('ATCG');
+const seq = createSequenceFromDNA('ATCG');
 ```
 
 1. Require `ntseq`
