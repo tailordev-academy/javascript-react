@@ -4,6 +4,7 @@
 
 - know what is what
 - understand the (relatively) recent JavaScript syntax
+- be able to design a JavaScript library
 
 
 ## What is React?
@@ -45,11 +46,6 @@ implement JavaScript.
 ES5 is supported by all browsers, but lacks very interesting features. It is the
 JavaScript language you likely know. `jQuery` used to be a great library back
 then 😅
-
-
-### Map/Filter/Reduce
-
-![Tweet by Steven Luscher about map/filter/reduce](images/map-filter-reduce.png)
 
 
 ### ES2015 (ES6)
@@ -354,6 +350,11 @@ const printJSON = async (endpoint) => {
 
 [MDN Async
 Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+
+
+### Reminder: Map/Filter/Reduce
+
+![Tweet by Steven Luscher about map/filter/reduce](images/map-filter-reduce.png)
 
 
 <!-- .slide: class="hands-on" -->
