@@ -598,7 +598,7 @@ $ npm run build
   ``` json
   "scripts": {
     "build": ...,
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   }
   ```
 
