@@ -580,7 +580,7 @@ $ npm run build
 2. Create a `.npmignore` file:
 
   ``` bash
-  $ echo '*.js' > .npmignore
+  $ echo "*.js\n*.tgz\n.babelrc" > .npmignore
   ```
 
 3. Create a `.gitignore` file:
@@ -611,8 +611,6 @@ $ npm pack
 ``` bash
 $ tar tf seq-utils-1.0.0.tgz
 package/package.json
-package/.npmignore
-package/.babelrc
 package/dist/index.js
 ```
 
