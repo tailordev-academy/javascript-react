@@ -633,7 +633,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 1. Require the `seq-utils` module created previously:
 
     ```bash
-    $ yarn add file:../seq-utils/seq-utils-1.0.0.tgz
+    $ yarn add file:../seq-utils/seq-utils-<version>.tgz
     ```
 
 2. Use this module to populate the `sequences` state attribute with random
@@ -819,11 +819,12 @@ components](https://facebook.github.io/react/docs/uncontrolled-components.html)
 <!-- .slide: class="hands-on" -->
 ### Exercise 2.7
 
-1. Create a `Sequence` component that renders a sequence (`PropTypes.string`):
+1. Create a `Sequence` component that renders a DNA sequence
+   (`PropTypes.string`):
 
     ```jinja
     <pre>
-      <code>{sequence}</code>
+      <code>{dna}</code>
     </pre>
     ```
 
@@ -889,11 +890,11 @@ Let's have fun with React components!
 <!-- .slide: class="hands-on" -->
 ### Exercise 2.11
 
-Add a new method `getGCContent()` to `SequenceView` that takes the sequence
+Add a new method `getGCContent()` to the `SequenceView` that takes the sequence
 string as input and returns its [GC content](https://en.wikipedia.org/wiki/GC-content).
 
-You should call `contentATGC()` on a `Seq` instance, then compute the result of
-the GC content formula:
+You should call `contentATGC()` on a `Nt.Seq` instance, then compute the result
+of the GC content formula:
 
 ```js
 const atgc = seq.contentATGC();
@@ -1020,9 +1021,9 @@ import renderer from 'react-test-renderer';
 import Item from './Item';
 
 it('renders correctly', () => {
-  const tree = renderer.create(
-    <Item title="item title" onSelect={() => {}} />
-  ).toJSON();
+  const tree = renderer
+    .create(<Item title="item title" onSelect={() => {}} />)
+    .toJSON();
   expect(tree).toMatchSnapshot();
 });
 ```
@@ -1053,7 +1054,7 @@ If you modify your component, snapshot tests will not pass. You have to update
 the snapshot reference files:
 
 ```bash
-$ yarn test -- --updateSnapshot
+$ yarn test --updateSnapshot
 ```
 
 ```
@@ -1070,7 +1071,7 @@ Airbnb.
 <br>
 
 ```bash
-$ yarn add enzyme jest-enzyme --dev
+$ yarn add enzyme enzyme-adapter-react-16 --dev
 ```
 
 <br>
@@ -1130,7 +1131,7 @@ it('receives event when Item is selected', () => {
 Use the command below to generate code coverage:
 
 ```bash
-$ yarn test -- --coverage
+$ yarn test --coverage
 ```
 
 You can open `coverage/lcov-report/index.html` to get the HTML report (which is
@@ -1180,7 +1181,7 @@ Create a `Complement` widget that renders a `Sequence` configured with the
 complement of a sequence passed to `Complement` as a prop.
 
 You can get the complement of a `Seq` instance by calling `complement()` on it,
-and get the sequence as string by calling `sequence()`.
+and get the DNA sequence as string by calling `sequence()`.
 
 
 ### Checkpoint #5
