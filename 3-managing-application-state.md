@@ -398,7 +398,7 @@ it('renders without crashing', () => {
       onSelectSequence={jest.fn()}
     />
   );
-  expect(wrapper.hasClass('App')).toEqual(true);
+  expect(wrapper.find('.App)).toHaveLength(1);
 });
 ```
 
@@ -428,7 +428,7 @@ it('renders without crashing', () => {
       <Home />
     </Provider>
   );
-  expect(wrapper.hasClass('Home')).toEqual(true);
+  expect(wrapper.find('.Home')).toHaveLength(1);
 });
 ```
 
