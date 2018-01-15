@@ -425,7 +425,7 @@ In a functional-based component, props are the first argument of the function:
 const Item = (props) => <li>{props.value}</li>;
 
 const List = ({ values }) => (
-  {values.map(val => <Item value={val} />)}
+  <ul>{values.map(val => <Item value={val} />)}</ul>
 );
 ```
 
@@ -1015,6 +1015,7 @@ testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html)
 #### Example of a snapshot test
 
 ```js
+// src/Item/index.test.js
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -1034,7 +1035,7 @@ it('renders correctly', () => {
 Jest creates snapshot reference files that must be put under version control!
 
 ```bash
-$ cat src/List/__snapshots__/Item.test.js.snap
+$ cat src/Item/__snapshots__/index.test.js.snap
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
@@ -1097,6 +1098,7 @@ Documentation: http://airbnb.io/enzyme/
 #### Example with `shallow()`
 
 ```js
+// src/List/index.test.js
 import React from 'react';
 import { shallow } from 'enzyme';
 import { generate } from 'seq-utils';
@@ -1109,7 +1111,6 @@ it('renders items', () => {
   const wrapper = shallow(
     <List sequences={sequences} onSelectSequence={() => {}} />
   );
-
   expect(wrapper.find(Item)).toHaveLength(sequences.length);
 });
 ```
@@ -1118,6 +1119,7 @@ it('renders items', () => {
 #### Example with `mount()`
 
 ```js
+// src/List/index.test.js
 it('receives event when Item is selected', () => {
   const sequence = generate();
   const spy = jest.fn();
@@ -1125,7 +1127,6 @@ it('receives event when Item is selected', () => {
   const wrapper = mount(
     <List sequences={[sequence]} onSelectSequence={spy} />
   );
-
   expect(spy).not.toHaveBeenCalled();
   wrapper.find('button').simulate('click');
   expect(spy).toHaveBeenCalled();

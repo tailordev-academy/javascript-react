@@ -69,7 +69,7 @@ Action creators are functions that create actions:
 ```js
 export const myAction = () => ({ type: MY_ACTION });
 
-export cont myActionWithArgs = (id, name) => ({
+export const myActionWithArgs = (id, name) => ({
   type: MY_ACTION_WITH_ARGS,
   id,
   name,
@@ -398,8 +398,9 @@ it('renders without crashing', () => {
       onSelectSequence={jest.fn()}
     />
   );
-  expect(wrapper.find('.App)).toHaveLength(1);
+  expect(wrapper.find('.App')).toHaveLength(1);
 });
+- 179
 ```
 
 
