@@ -102,7 +102,7 @@ export const callAPI = id => {
 persist and rehydrate a Redux store (in `localStorage` for example).
 
 ``` bash
-$ yarn add redux-persist
+$ yarn add redux-persist@4
 ```
 
 
