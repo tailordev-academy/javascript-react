@@ -22,3 +22,8 @@ When you see slides with a colored background:
 - do the exercises
 - talk to your instructor
 - ask questions 😉
+
+
+## Get the slides!
+
+**frama.link/td-react**
