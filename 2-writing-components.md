@@ -121,7 +121,7 @@ import ReactDOM from 'react-dom';
 class Item extends React.Component {
   render() {
     return (
-      <p>42</p>
+      <li>42</li>
     );
   }
 }
@@ -139,7 +139,7 @@ import ReactDOM from 'react-dom';
 class Item extends React.Component {
   render() {
     return (
-      <p>42</p>
+      <li>42</li>
     );
   }
 }
@@ -406,7 +406,7 @@ class Item extends React.Component {
 
   render() {
     return (
-      <p>{this.props.value}</p>
+      <li>{this.props.value}</li>
     );
   }
 }
