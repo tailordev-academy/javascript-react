@@ -516,9 +516,9 @@ const List = ({ sequences }) => {
   }
 
   return (
-    <div className="list-group">
+    <ul className="list-group">
       {sequences.map(s => <Item key={s} title={s} />)}
-    </div>
+    </ul>
   );
 };
 
