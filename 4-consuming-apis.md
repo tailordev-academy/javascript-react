@@ -71,6 +71,8 @@ to create asynchronous actions (API calls).
 $ yarn add redux-thunk
 ```
 
+⚠️ Do not forget to configure it!
+
 
 #### Example of a thunk
 
