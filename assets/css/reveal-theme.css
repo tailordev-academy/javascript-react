@@ -188,7 +188,7 @@
 .reveal a {
   color: #2e354f;
   text-decoration: none;
-  border-bottom: none !important;
+  border-bottom: 1px solid #2e354f;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
@@ -196,7 +196,7 @@
 .reveal a:hover {
   color: #101423;
   text-shadow: none;
-  border: none; }
+  border-bottom-width: 3px; }
 
 /*********************************************
  * IMAGES
