@@ -81,7 +81,7 @@ export const callAPI = id => {
   return dispatch => {
     dispatch({ type: CALL_API_STARTED });
 
-    fetch(`https://example.org/api/endpoint/${id}`)
+    return fetch(`https://example.org/api/endpoint/${id}`)
       .then((response) => {
         // TODO: throw Error when response is not successful
         return response.json();
