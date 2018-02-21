@@ -890,8 +890,19 @@ Let's have fun with React components!
 <!-- .slide: class="hands-on" -->
 ### Exercise 2.11
 
-Add a new method `getGCContent()` to the `SequenceView` that takes the sequence
-string as input and returns its [GC content](https://en.wikipedia.org/wiki/GC-content).
+Create another widget component `GCContent` that renders a `Card`. The title
+should be "GC content" and the unit "%". Place it next to the `Length` widget.
+
+The value, which will be computed in the next exercise, requires the `dna`
+sequence.
+
+
+<!-- .slide: class="hands-on" -->
+### Exercise 2.12
+
+Add a method `getValue()` to the `GCContent` that computes the [GC
+content](https://en.wikipedia.org/wiki/GC-content) of the sequence string given
+to that component. The displayed value will be a percentage.
 
 You should call `contentATGC()` on a `Nt.Seq` instance, then compute the result
 of the GC content formula:
@@ -902,13 +913,6 @@ const atgc = seq.contentATGC();
 const gc = (atgc['G'] + atgc['C']) /
   (atgc['A'] + atgc['T'] + atgc['G'] + atgc['C']);
 ```
-
-
-<!-- .slide: class="hands-on" -->
-### Exercise 2.12
-
-Create a new `Card` next to the `Length` one to display the result of
-`getGCContent()`. The title should be "GC content" and the unit "%".
 
 
 ### Checkpoint #3
