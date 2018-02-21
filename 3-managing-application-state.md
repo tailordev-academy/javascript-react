@@ -140,7 +140,8 @@ export const action = () => {
 
 // reducer
 export default function reducer(state = initialState, action = {}) {
-  // ...
+  // TODO: implement me
+  return state;
 }
 ```
 
