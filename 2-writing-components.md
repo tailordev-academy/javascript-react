@@ -938,6 +938,20 @@ the DOM
 ![React lifecycle methods](images/lifecycle-methods.png)
 
 
+![Update on Async Rendering](images/react-blog-post-async-update.png)
+
+
+### Deprecated and new lifecycles
+
+- `UNSAFE_componentWillMount`
+- `UNSAFE_componentWillReceiveProps`
+- `UNSAFE_componentWillUpdate`
+
+<br>
+- `getDerivedStateFromProps`
+- `getSnapshotBeforeUpdate`
+
+
 ### Lifting state up
 
 There should be a single **source of truth** for any data that changes in a
